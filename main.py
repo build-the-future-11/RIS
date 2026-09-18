@@ -1,8 +1,9 @@
-
 import numpy as np
+
 
 def irr_fn(x):
     return np.sin(x[0]) + np.cos(x[1])
+
 
 def finite_difference_hessian(fn, x, eps=1e-4):
     n = len(x)
@@ -36,6 +37,11 @@ def finite_difference_hessian(fn, x, eps=1e-4):
 
     return h
 
-x = np.array([1.0, 2.0])
 
-print(finite_difference_hessian(irr_fn, x))
+def demo():
+    x = np.array([1.0, 2.0])
+    print(finite_difference_hessian(irr_fn, x))
+
+
+if __name__ == "__main__":
+    demo()
