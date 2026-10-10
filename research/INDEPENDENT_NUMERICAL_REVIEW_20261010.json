@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-10",
+  "kind": "INDEPENDENT_ENGINEERING_REVIEW",
+  "repository": "build-the-future-11/RIS",
+  "reviewed_commit": "0175f756759cdd99b28db1c0b4acaa38a563ca50",
+  "reviewed_tree": "a130e66efe27191e7fa5e634c5cd71fa3b84c62a",
+  "reviewed_source": {
+    "main.py": {
+      "git_blob": "8481cec02ac7a31d11c37d1b0e548a15a2dac91d",
+      "sha256": "b53175a447bb13e17bfc8e3b58fa7b58ff068b4488316f126a2875b1d1d9ea63"
+    }
+  },
+  "concurrency_and_authorship": "The represented-displacement repair arrived in a separately authored concurrent commit after this review lane recorded the prior head. The reviewer inspected and retained that correction instead of publishing a duplicate source change. This follow-up adds only independent executable tests and a review receipt; it does not claim authorship of main.py at the reviewed revision.",
+  "question": "Do actual positive and negative coordinate displacements preserve the analytic diagonal and mixed curvature near one-ULP boundaries and at dissimilar large coordinate scales?",
+  "method": "Three independent test methods compare shifted quadratics and an affine function to their analytic Hessians. Cases use centers +1, -1, 1e12 and mixed coordinates [1e12, -2e12] with requested steps that differ from the actual represented distances. Existing tests and tolerances are unchanged.",
+  "tests": {
+    "file": "tests/test_independent_represented_steps.py",
+    "sha256": "5d34e27afe1155e2484d79ea82932a06058a4c990cd390809d0679b776525680",
+    "command": "OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python -m unittest discover -s tests -v",
+    "reviewed_source_repository_tests": 17,
+    "additional_independent_methods": 3,
+    "complete_local_methods_passed": 20,
+    "local_execution_seconds": 0.24,
+    "local_environment": {
+      "python": "3.12.14",
+      "numpy": "2.3.5",
+      "device": "CPU"
+    },
+    "hosted_evidence_before_this_review_commit": {
+      "run_id": 38025413979,
+      "job_id": 114135114593,
+      "commit": "0175f756759cdd99b28db1c0b4acaa38a563ca50",
+      "exact_head_checkout": true,
+      "passed": 17,
+      "seconds": 0.037,
+      "url": "https://github.com/build-the-future-11/RIS/actions/runs/38025413979"
+    },
+    "count_boundary": "The prior 17-test hosted result is evidence for the reviewed source; it does not claim to have executed the three newly retained review methods. New-head hosted evidence belongs in the draft PR receipt."
+  },
+  "outcome": "No concrete blocker found within this numerical review. The tests agree with the analytic Hessians at the selected represented-step boundaries.",
+  "earlier_record_preserved": "research/ENGINEERING_NUMERICAL_INTEGRITY_20261010.json",
+  "source_changed_this_followup": false,
+  "scientific_runs": 0,
+  "protected_evaluation_opened": false,
+  "scientific_result_changed": false,
+  "research_complete": false,
+  "limitations": [
+    "Absolute-step selection, truncation and cancellation are not automatically estimated.",
+    "Constructed polynomial fixtures do not establish risk-system maturity, forecasting quality or financial performance.",
+    "GitHub integration remains pending in draft PR4."
+  ],
+  "second_read_only_review": {
+    "scope": "actual-step diagonal and tensor-product mixed derivative algebra plus all20 local methods",
+    "methods_passed": 20,
+    "seconds": 0.128,
+    "source_edits": false,
+    "result": "No concrete blocker found; objective-call budget preserved."
+  }
+}

@@ -8,10 +8,11 @@
     "README.md"
   ],
   "engineering_question": "Use represented coordinate distances in nonuniform Hessian stencils",
-  "current_change": "Use actual positive/negative displacements, nonuniform second derivatives, and tensor-product first-derivative weights for mixed partials. Cache axis evaluations and preserve the 2*n*n+1 objective-call budget.",
+  "current_change": "Use actual positive/negative displacements, nonuniform second derivatives, and tensor-product first-derivative weights for mixed partials. Cache axis evaluations and preserve the 2*n*n+1 objective-call budget. Independent review retained three additional analytic methods without modifying the concurrent Hessian source.",
   "required_session_reads": [
     "README.md",
-    "research/ENGINEERING_NUMERICAL_INTEGRITY_20261010.json"
+    "research/ENGINEERING_NUMERICAL_INTEGRITY_20261010.json",
+    "research/INDEPENDENT_NUMERICAL_REVIEW_20261010.json"
   ],
   "protected_boundary": "Analytic numerical regressions establish stencil correctness only; absolute-step choice and cancellation limits remain.",
   "protected_evaluation_opened": false,
@@ -24,7 +25,7 @@
     "protected_runs": 0
   },
   "pending_gates": [
-    "Independent review and GitHub integration.",
+    "GitHub integration remains pending; independent numerical review completed for source 0175f756759cdd99b28db1c0b4acaa38a563ca50 within the recorded constructed-fixture scope.",
     "Scientific hypothesis/specification/methodology/freeze/evidence/release gates remain governed by the retained study contracts."
   ],
   "history": [
@@ -33,6 +34,13 @@
       "kind": "engineering_revision",
       "record": "research/ENGINEERING_NUMERICAL_INTEGRITY_20261010.json",
       "status": "implemented; 17 bounded tests passed; integration pending",
+      "scientific_outcomes_created": false
+    },
+    {
+      "date": "2026-10-10",
+      "kind": "independent_engineering_review",
+      "record": "research/INDEPENDENT_NUMERICAL_REVIEW_20261010.json",
+      "status": "20 bounded methods passed on the concurrently repaired source; no source edit by this review follow-up; integration pending",
       "scientific_outcomes_created": false
     }
   ],
