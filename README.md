@@ -64,3 +64,29 @@ smoothness of their objective. Input validation does not estimate truncation or
 cancellation error. The regression suite checks analytic quadratic/sinusoidal
 references, real scalar and finite-value admission, input preservation, and large
 constant offsets. These are numerical prototype tests, not financial validation.
+
+### Arithmetic range fallback
+
+Finite objective samples can have a finite Hessian even when intermediate
+differences overflow. On an arithmetic range failure, the implementation now
+recomputes the affected entry using exact rational operations on the already
+captured float64 samples and represented distances, then rounds once to float64.
+This also preserves representable subnormal curvature. A genuinely overflowing
+result or a nonzero result that rounds to zero raises `FloatingPointError`.
+Ordinary arithmetic, step admission, successful-call objective order and the
+`2*n*n+1` successful-call budget remain the existing contract; fallback never
+calls the objective again. Invalid objectives or unrepresentable curvature can
+stop a failed call early.
+
+The prospective specification and retained development evidence are indexed in
+`RESEARCH_STATE.json`. Reproduce the captured-value comparison with:
+
+```bash
+python -m unittest discover -s tests -v
+python research/replay_stencil_arithmetic.py
+```
+
+The replay uses the retained objective values and performs no new objective
+measurements. Exact stencil arithmetic does not recover rounding already lost
+inside the objective, choose a step or bound finite-difference approximation
+error. The numerical prototype's scientific boundary remains unchanged.

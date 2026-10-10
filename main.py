@@ -1,3 +1,4 @@
+from fractions import Fraction
 from numbers import Real
 
 import numpy as np
@@ -7,14 +8,61 @@ def irr_fn(x):
     return np.sin(x[0]) + np.cos(x[1])
 
 
+def _diagonal_stencil(values, steps):
+    positive, middle, negative = values
+    hp, hm = steps
+    # Secant slopes preserve zero curvature for an exactly affine stencil.
+    return 2 * ((positive - middle) / hp - (middle - negative) / hm) / (hp + hm)
+
+
+def _first_derivative(positive, middle, negative, hp, hm):
+    return ((hm / (hp + hm)) * ((positive - middle) / hp)
+            + (hp / (hp + hm)) * ((middle - negative) / hm))
+
+
+def _mixed_stencil(values, steps):
+    hp_i, hm_i, hp_j, hm_j = steps
+    at_plus = _first_derivative(*values[:3], hp_i, hm_i)
+    at_zero = _first_derivative(*values[3:6], hp_i, hm_i)
+    at_minus = _first_derivative(*values[6:], hp_i, hm_i)
+    return _first_derivative(at_plus, at_zero, at_minus, hp_j, hm_j)
+
+
+def _finite_stencil(stencil, values, steps):
+    """Keep ordinary arithmetic; recover only range failures from cached samples."""
+    try:
+        with np.errstate(over="raise", under="raise", invalid="raise", divide="raise"):
+            result = stencil(values, steps)
+        if np.isfinite(result):
+            return result
+    except (FloatingPointError, OverflowError):
+        pass
+
+    # Fixed work per entry: at most nine finite float64 samples and four steps.
+    # Objective calls stay outside this fallback and its temporary error policy.
+    exact_values = tuple(Fraction.from_float(float(value)) for value in values)
+    exact_steps = tuple(Fraction.from_float(float(step)) for step in steps)
+    exact = stencil(exact_values, exact_steps)
+    try:
+        result = float(exact)
+    except OverflowError as exc:
+        raise FloatingPointError("finite differences produced a non-finite Hessian") from exc
+    if not np.isfinite(result):
+        raise FloatingPointError("finite differences produced a non-finite Hessian")
+    if result == 0 and exact != 0:
+        raise FloatingPointError("finite differences produced unrepresentable nonzero curvature")
+    return result
+
+
 def finite_difference_hessian(fn, x, eps=1e-4):
     """Approximate a real scalar objective's Hessian using centered differences.
 
     Inputs are copied to float64 before perturbation. ``eps`` is an absolute
     coordinate step; callers must choose it for their objective's scale.
     Stencil denominators use the actual float64 displacements, which can
-    differ on the two sides of a coordinate. Only the upper triangle is
-    evaluated, then reflected exactly.
+    differ on the two sides of a coordinate. Stencil arithmetic range failures
+    use exact rationals over the captured float64 samples, without reevaluation.
+    Only the upper triangle is evaluated, then reflected exactly.
     """
     if not callable(fn):
         raise TypeError("fn must be callable")
@@ -68,30 +116,27 @@ def finite_difference_hessian(fn, x, eps=1e-4):
         positive_values.append(evaluate(plus))
         negative_values.append(evaluate(minus))
 
-    def first_derivative(positive, middle, negative, coordinate):
-        hp, hm = positive_steps[coordinate], negative_steps[coordinate]
-        # Three-point derivative on a possibly nonuniform coordinate stencil.
-        return ((hm / (hp + hm)) * ((positive - middle) / hp)
-                + (hp / (hp + hm)) * ((middle - negative) / hm))
-
     for i in range(size):
         hp, hm = positive_steps[i], negative_steps[i]
-        # Difference secant slopes first: affine functions have zero curvature
-        # even at a binade boundary where the represented steps are unequal.
-        hessian[i, i] = 2 * (
-            (positive_values[i] - center) / hp
-            - (center - negative_values[i]) / hm
-        ) / (hp + hm)
+        hessian[i, i] = _finite_stencil(
+            _diagonal_stencil, (positive_values[i], center, negative_values[i]), (hp, hm),
+        )
         for j in range(i + 1, size):
             pp, pm, mp, mm = (point.copy() for _ in range(4))
             pp[i], pp[j] = above[i], above[j]
             pm[i], pm[j] = above[i], below[j]
             mp[i], mp[j] = below[i], above[j]
             mm[i], mm[j] = below[i], below[j]
-            at_plus = first_derivative(evaluate(pp), positive_values[j], evaluate(mp), i)
-            at_zero = first_derivative(positive_values[i], center, negative_values[i], i)
-            at_minus = first_derivative(evaluate(pm), negative_values[j], evaluate(mm), i)
-            mixed = first_derivative(at_plus, at_zero, at_minus, j)
+            # Retain the existing pp, mp, pm, mm objective order before arithmetic.
+            pp_value, mp_value = evaluate(pp), evaluate(mp)
+            pm_value, mm_value = evaluate(pm), evaluate(mm)
+            mixed = _finite_stencil(
+                _mixed_stencil,
+                (pp_value, positive_values[j], mp_value,
+                 positive_values[i], center, negative_values[i],
+                 pm_value, negative_values[j], mm_value),
+                (hp, hm, positive_steps[j], negative_steps[j]),
+            )
             hessian[i, j] = hessian[j, i] = mixed
     if not np.isfinite(hessian).all():
         raise FloatingPointError("finite differences produced a non-finite Hessian")

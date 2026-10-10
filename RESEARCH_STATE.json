@@ -7,12 +7,14 @@
   "scientific_scope_authority": [
     "README.md"
   ],
-  "engineering_question": "Use represented coordinate distances in nonuniform Hessian stencils",
-  "current_change": "Use actual positive/negative displacements, nonuniform second derivatives, and tensor-product first-derivative weights for mixed partials. Cache axis evaluations and preserve the 2*n*n+1 objective-call budget. Independent review retained three additional analytic methods without modifying the concurrent Hessian source.",
+  "engineering_question": "Recover finite curvature when intermediate stencil arithmetic exceeds float64 range",
+  "current_change": "Preserve ordinary nonuniform diagonal/mixed arithmetic; use a fixed exact-rational fallback over captured float64 samples on range failure. Preserve represented steps, input admission, objective order/count and exact symmetry; reject genuinely unrepresentable curvature. Prior represented-distance repairs and all 20 earlier tests remain intact.",
   "required_session_reads": [
     "README.md",
     "research/ENGINEERING_NUMERICAL_INTEGRITY_20261010.json",
-    "research/INDEPENDENT_NUMERICAL_REVIEW_20261010.json"
+    "research/INDEPENDENT_NUMERICAL_REVIEW_20261010.json",
+    "research/STENCIL_ARITHMETIC_CONTRACT_20261010.md",
+    "research/STENCIL_ARITHMETIC_VERIFICATION_20261010.json"
   ],
   "protected_boundary": "Analytic numerical regressions establish stencil correctness only; absolute-step choice and cancellation limits remain.",
   "protected_evaluation_opened": false,
@@ -25,7 +27,7 @@
     "protected_runs": 0
   },
   "pending_gates": [
-    "GitHub integration remains pending; independent numerical review completed for source 0175f756759cdd99b28db1c0b4acaa38a563ca50 within the recorded constructed-fixture scope.",
+    "Independent review passed 32 methods plus six analytic probes and all 11 captured stencils; draft-PR integration and exact-head hosted CI remain pending for this amendment.",
     "Scientific hypothesis/specification/methodology/freeze/evidence/release gates remain governed by the retained study contracts."
   ],
   "history": [
@@ -42,6 +44,16 @@
       "record": "research/INDEPENDENT_NUMERICAL_REVIEW_20261010.json",
       "status": "20 bounded methods passed on the concurrently repaired source; no source edit by this review follow-up; integration pending",
       "scientific_outcomes_created": false
+    },
+    {
+      "date": "2026-10-10",
+      "kind": "prospective_stencil_arithmetic_revision",
+      "contract": "research/STENCIL_ARITHMETIC_CONTRACT_20261010.md",
+      "baseline_record": "research/STENCIL_ARITHMETIC_BASELINE_20261010.json",
+      "record": "research/STENCIL_ARITHMETIC_VERIFICATION_20261010.json",
+      "status": "32 bounded methods passed locally and independently; six extra review probes and all 11 captured stencils passed; integration pending",
+      "scientific_outcomes_created": false,
+      "independent_review": "APPROVED_WITHIN_PROSPECTIVE_CONTRACT"
     }
   ],
   "history_index_scope": "Index to retained project records and this revision; not a reconstruction or replacement of the complete git/artifact history."
