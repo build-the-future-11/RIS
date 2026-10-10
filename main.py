@@ -12,7 +12,9 @@ def finite_difference_hessian(fn, x, eps=1e-4):
 
     Inputs are copied to float64 before perturbation. ``eps`` is an absolute
     coordinate step; callers must choose it for their objective's scale.
-    Only the upper triangle is evaluated, then reflected exactly.
+    Stencil denominators use the actual float64 displacements, which can
+    differ on the two sides of a coordinate. Only the upper triangle is
+    evaluated, then reflected exactly.
     """
     if not callable(fn):
         raise TypeError("fn must be callable")
@@ -58,18 +60,38 @@ def finite_difference_hessian(fn, x, eps=1e-4):
     size = point.size
     hessian = np.empty((size, size), dtype=np.float64)
     center = evaluate(point)
+    positive_steps, negative_steps = above - point, point - below
+    positive_values, negative_values = [], []
     for i in range(size):
         plus, minus = point.copy(), point.copy()
         plus[i], minus[i] = above[i], below[i]
-        # Difference from center first avoids multiplying a large offset by 2.
-        hessian[i, i] = ((evaluate(plus) - center) + (evaluate(minus) - center)) / squared_step
+        positive_values.append(evaluate(plus))
+        negative_values.append(evaluate(minus))
+
+    def first_derivative(positive, middle, negative, coordinate):
+        hp, hm = positive_steps[coordinate], negative_steps[coordinate]
+        # Three-point derivative on a possibly nonuniform coordinate stencil.
+        return ((hm / (hp + hm)) * ((positive - middle) / hp)
+                + (hp / (hp + hm)) * ((middle - negative) / hm))
+
+    for i in range(size):
+        hp, hm = positive_steps[i], negative_steps[i]
+        # Difference secant slopes first: affine functions have zero curvature
+        # even at a binade boundary where the represented steps are unequal.
+        hessian[i, i] = 2 * (
+            (positive_values[i] - center) / hp
+            - (center - negative_values[i]) / hm
+        ) / (hp + hm)
         for j in range(i + 1, size):
             pp, pm, mp, mm = (point.copy() for _ in range(4))
             pp[i], pp[j] = above[i], above[j]
             pm[i], pm[j] = above[i], below[j]
             mp[i], mp[j] = below[i], above[j]
             mm[i], mm[j] = below[i], below[j]
-            mixed = ((evaluate(pp) - evaluate(pm)) - (evaluate(mp) - evaluate(mm))) / squared_step / 4.0
+            at_plus = first_derivative(evaluate(pp), positive_values[j], evaluate(mp), i)
+            at_zero = first_derivative(positive_values[i], center, negative_values[i], i)
+            at_minus = first_derivative(evaluate(pm), negative_values[j], evaluate(mm), i)
+            mixed = first_derivative(at_plus, at_zero, at_minus, j)
             hessian[i, j] = hessian[j, i] = mixed
     if not np.isfinite(hessian).all():
         raise FloatingPointError("finite differences produced a non-finite Hessian")

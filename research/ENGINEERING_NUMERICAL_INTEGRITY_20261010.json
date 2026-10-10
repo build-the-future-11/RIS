@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-10",
+  "kind": "ENGINEERING_CORRECTNESS_REVISION",
+  "repository": "build-the-future-11/RIS",
+  "parent_commit": "f043f643011d06597d092ecb74d1b6e9ee290937",
+  "existing_draft_pr": 4,
+  "title": "Use represented coordinate distances in nonuniform Hessian stencils",
+  "observation": "For the affine function x-2**40, a requested step 1.25*2**-13 produces unequal representable distances and the old Hessian is 5242.88 instead of zero.",
+  "cause": "The denominator used requested eps squared, assuming exactly symmetric representable perturbations.",
+  "severity": "incorrect arithmetic, state or evidence admission on valid/ambiguous boundary inputs",
+  "implemented_change": "Use actual positive/negative displacements, nonuniform second derivatives, and tensor-product first-derivative weights for mixed partials. Cache axis evaluations and preserve the 2*n*n+1 objective-call budget.",
+  "predicted_consequence": "New constructed regressions fail on the recorded parent and pass after the repair while the existing bounded suite passes.",
+  "evidence": {
+    "pre_fix_new_tests_failed": 3,
+    "pre_fix_control_tests_passed": 0,
+    "post_fix_suite_tests_passed": 17,
+    "command": "PYTHONPATH=. OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python -m pytest -q tests",
+    "environment": {
+      "python": "3.12.14",
+      "numpy": "2.3.5",
+      "torch": "2.14.1+cpu",
+      "pytest": "9.1.1",
+      "device": "CPU"
+    },
+    "critical_static_checks": "Ruff E9,F821,F822,F823 passed for all changed Python files",
+    "compilation": "All changed Python sources compiled",
+    "whitespace": "git diff --check passed"
+  },
+  "changed_python_sha256": {
+    "main.py": "b53175a447bb13e17bfc8e3b58fa7b58ff068b4488316f126a2875b1d1d9ea63",
+    "tests/test_represented_steps.py": "08a6108f577b0c9842f088d61e0e4d588e86907c567321c7464d9167fb798410"
+  },
+  "scientific_runs": 0,
+  "scientific_result_changed": false,
+  "scientific_disposition": "NUMERICAL_PROTOTYPE; no completed scientific study asserted",
+  "protected_boundary": "Analytic numerical regressions establish stencil correctness only; absolute-step choice and cancellation limits remain.",
+  "research_complete": false,
+  "independent_review": "pending",
+  "integration": "draft pull request; not merged",
+  "release_gate": "Review/integrate the implementation and retain source identities; scientific successors remain separately gated."
+}
