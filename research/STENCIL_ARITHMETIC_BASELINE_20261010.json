@@ -1,0 +1,981 @@
+{
+  "schema": "ris.stencil-arithmetic.baseline.v1",
+  "status": "pre-implementation baseline; historical results preserved",
+  "parent_commit": "cae6c530f218b0802ab269f99c5272d71f511048",
+  "source_sha256": "b53175a447bb13e17bfc8e3b58fa7b58ff068b4488316f126a2875b1d1d9ea63",
+  "contract_sha256": "5b5775311e41eea9bee657959e3a1f9fe03a2f6adad2bed2912d3c8f31e75770",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5"
+  },
+  "scenarios": [
+    {
+      "name": "large_diagonal",
+      "description": "f=(2*(x0/1e154)^2-1)*1e308; analytic H=4",
+      "point": [
+        0.0
+      ],
+      "eps": 1e+154,
+      "calls": [
+        {
+          "point": [
+            0.0
+          ],
+          "point_hex": [
+            "0x0.0p+0"
+          ],
+          "value": -1e+308,
+          "value_hex": "-0x1.1ccf385ebc8a0p+1023"
+        },
+        {
+          "point": [
+            1e+154
+          ],
+          "point_hex": [
+            "0x1.7dddf6b095ff1p+511"
+          ],
+          "value": 1e+308,
+          "value_hex": "0x1.1ccf385ebc8a0p+1023"
+        },
+        {
+          "point": [
+            -1e+154
+          ],
+          "point_hex": [
+            "-0x1.7dddf6b095ff1p+511"
+          ],
+          "value": 1e+308,
+          "value_hex": "0x1.1ccf385ebc8a0p+1023"
+        }
+      ],
+      "outcome": {
+        "error_type": "FloatingPointError",
+        "error": "finite differences produced a non-finite Hessian"
+      },
+      "warnings": []
+    },
+    {
+      "name": "large_mixed",
+      "description": "f=(1.5*u^2+0.5*u-1)*v*1e308; u=x0/1e154,v=x1/1e154; analytic Hxy=0.5",
+      "point": [
+        0.0,
+        0.0
+      ],
+      "eps": 1e+154,
+      "calls": [
+        {
+          "point": [
+            0.0,
+            0.0
+          ],
+          "point_hex": [
+            "0x0.0p+0",
+            "0x0.0p+0"
+          ],
+          "value": -0.0,
+          "value_hex": "-0x0.0p+0"
+        },
+        {
+          "point": [
+            1e+154,
+            0.0
+          ],
+          "point_hex": [
+            "0x1.7dddf6b095ff1p+511",
+            "0x0.0p+0"
+          ],
+          "value": 0.0,
+          "value_hex": "0x0.0p+0"
+        },
+        {
+          "point": [
+            -1e+154,
+            0.0
+          ],
+          "point_hex": [
+            "-0x1.7dddf6b095ff1p+511",
+            "0x0.0p+0"
+          ],
+          "value": 0.0,
+          "value_hex": "0x0.0p+0"
+        },
+        {
+          "point": [
+            0.0,
+            1e+154
+          ],
+          "point_hex": [
+            "0x0.0p+0",
+            "0x1.7dddf6b095ff1p+511"
+          ],
+          "value": -1e+308,
+          "value_hex": "-0x1.1ccf385ebc8a0p+1023"
+        },
+        {
+          "point": [
+            0.0,
+            -1e+154
+          ],
+          "point_hex": [
+            "0x0.0p+0",
+            "-0x1.7dddf6b095ff1p+511"
+          ],
+          "value": 1e+308,
+          "value_hex": "0x1.1ccf385ebc8a0p+1023"
+        },
+        {
+          "point": [
+            1e+154,
+            1e+154
+          ],
+          "point_hex": [
+            "0x1.7dddf6b095ff1p+511",
+            "0x1.7dddf6b095ff1p+511"
+          ],
+          "value": 1e+308,
+          "value_hex": "0x1.1ccf385ebc8a0p+1023"
+        },
+        {
+          "point": [
+            -1e+154,
+            1e+154
+          ],
+          "point_hex": [
+            "-0x1.7dddf6b095ff1p+511",
+            "0x1.7dddf6b095ff1p+511"
+          ],
+          "value": 0.0,
+          "value_hex": "0x0.0p+0"
+        },
+        {
+          "point": [
+            1e+154,
+            -1e+154
+          ],
+          "point_hex": [
+            "0x1.7dddf6b095ff1p+511",
+            "-0x1.7dddf6b095ff1p+511"
+          ],
+          "value": -1e+308,
+          "value_hex": "-0x1.1ccf385ebc8a0p+1023"
+        },
+        {
+          "point": [
+            -1e+154,
+            -1e+154
+          ],
+          "point_hex": [
+            "-0x1.7dddf6b095ff1p+511",
+            "-0x1.7dddf6b095ff1p+511"
+          ],
+          "value": -0.0,
+          "value_hex": "-0x0.0p+0"
+        }
+      ],
+      "outcome": {
+        "error_type": "FloatingPointError",
+        "error": "finite differences produced a non-finite Hessian"
+      },
+      "warnings": []
+    },
+    {
+      "name": "nonuniform_diagonal",
+      "description": "center=2^562, scale=2^510, eps=1.25*2^509; f=(2*u^2-1)*1e308",
+      "point": [
+        1.5095849699286165e+169
+      ],
+      "eps": 2.0949699890535308e+153,
+      "calls": [
+        {
+          "point": [
+            1.5095849699286165e+169
+          ],
+          "point_hex": [
+            "0x1.0000000000000p+562"
+          ],
+          "value": -1e+308,
+          "value_hex": "-0x1.1ccf385ebc8a0p+1023"
+        },
+        {
+          "point": [
+            1.509584969928617e+169
+          ],
+          "point_hex": [
+            "0x1.0000000000001p+562"
+          ],
+          "value": 1e+308,
+          "value_hex": "0x1.1ccf385ebc8a0p+1023"
+        },
+        {
+          "point": [
+            1.5095849699286164e+169
+          ],
+          "point_hex": [
+            "0x1.fffffffffffffp+561"
+          ],
+          "value": -5e+307,
+          "value_hex": "-0x1.1ccf385ebc8a0p+1022"
+        }
+      ],
+      "outcome": {
+        "error_type": "FloatingPointError",
+        "error": "finite differences produced a non-finite Hessian"
+      },
+      "warnings": []
+    },
+    {
+      "name": "nonuniform_mixed",
+      "description": "shifted nonuniform cubic; analytic Hxy=0.5*1e308/(2^510)^2",
+      "point": [
+        1.5095849699286165e+169,
+        -1.5095849699286165e+169
+      ],
+      "eps": 2.0949699890535308e+153,
+      "calls": [
+        {
+          "point": [
+            1.5095849699286165e+169,
+            -1.5095849699286165e+169
+          ],
+          "point_hex": [
+            "0x1.0000000000000p+562",
+            "-0x1.0000000000000p+562"
+          ],
+          "value": -0.0,
+          "value_hex": "-0x0.0p+0"
+        },
+        {
+          "point": [
+            1.509584969928617e+169,
+            -1.5095849699286165e+169
+          ],
+          "point_hex": [
+            "0x1.0000000000001p+562",
+            "-0x1.0000000000000p+562"
+          ],
+          "value": 0.0,
+          "value_hex": "0x0.0p+0"
+        },
+        {
+          "point": [
+            1.5095849699286164e+169,
+            -1.5095849699286165e+169
+          ],
+          "point_hex": [
+            "0x1.fffffffffffffp+561",
+            "-0x1.0000000000000p+562"
+          ],
+          "value": -0.0,
+          "value_hex": "-0x0.0p+0"
+        },
+        {
+          "point": [
+            1.5095849699286165e+169,
+            -1.5095849699286164e+169
+          ],
+          "point_hex": [
+            "0x1.0000000000000p+562",
+            "-0x1.fffffffffffffp+561"
+          ],
+          "value": -5e+307,
+          "value_hex": "-0x1.1ccf385ebc8a0p+1022"
+        },
+        {
+          "point": [
+            1.5095849699286165e+169,
+            -1.509584969928617e+169
+          ],
+          "point_hex": [
+            "0x1.0000000000000p+562",
+            "-0x1.0000000000001p+562"
+          ],
+          "value": 1e+308,
+          "value_hex": "0x1.1ccf385ebc8a0p+1023"
+        },
+        {
+          "point": [
+            1.509584969928617e+169,
+            -1.5095849699286164e+169
+          ],
+          "point_hex": [
+            "0x1.0000000000001p+562",
+            "-0x1.fffffffffffffp+561"
+          ],
+          "value": 5e+307,
+          "value_hex": "0x1.1ccf385ebc8a0p+1022"
+        },
+        {
+          "point": [
+            1.5095849699286164e+169,
+            -1.5095849699286164e+169
+          ],
+          "point_hex": [
+            "0x1.fffffffffffffp+561",
+            "-0x1.fffffffffffffp+561"
+          ],
+          "value": -4.375e+307,
+          "value_hex": "-0x1.f26aa2a5c9f18p+1021"
+        },
+        {
+          "point": [
+            1.509584969928617e+169,
+            -1.509584969928617e+169
+          ],
+          "point_hex": [
+            "0x1.0000000000001p+562",
+            "-0x1.0000000000001p+562"
+          ],
+          "value": -1e+308,
+          "value_hex": "-0x1.1ccf385ebc8a0p+1023"
+        },
+        {
+          "point": [
+            1.5095849699286164e+169,
+            -1.509584969928617e+169
+          ],
+          "point_hex": [
+            "0x1.fffffffffffffp+561",
+            "-0x1.0000000000001p+562"
+          ],
+          "value": 8.75e+307,
+          "value_hex": "0x1.f26aa2a5c9f18p+1022"
+        }
+      ],
+      "outcome": {
+        "error_type": "FloatingPointError",
+        "error": "finite differences produced a non-finite Hessian"
+      },
+      "warnings": []
+    },
+    {
+      "name": "exact_affine_cancellation",
+      "description": "f=(2*u-0.5)*2^1023; nonuniform exact affine stencil; H=0",
+      "point": [
+        1.5095849699286165e+169
+      ],
+      "eps": 2.0949699890535308e+153,
+      "calls": [
+        {
+          "point": [
+            1.5095849699286165e+169
+          ],
+          "point_hex": [
+            "0x1.0000000000000p+562"
+          ],
+          "value": -4.49423283715579e+307,
+          "value_hex": "-0x1.0000000000000p+1022"
+        },
+        {
+          "point": [
+            1.509584969928617e+169
+          ],
+          "point_hex": [
+            "0x1.0000000000001p+562"
+          ],
+          "value": 1.348269851146737e+308,
+          "value_hex": "0x1.8000000000000p+1023"
+        },
+        {
+          "point": [
+            1.5095849699286164e+169
+          ],
+          "point_hex": [
+            "0x1.fffffffffffffp+561"
+          ],
+          "value": -1.348269851146737e+308,
+          "value_hex": "-0x1.8000000000000p+1023"
+        }
+      ],
+      "outcome": {
+        "error_type": "FloatingPointError",
+        "error": "finite differences produced a non-finite Hessian"
+      },
+      "warnings": []
+    },
+    {
+      "name": "subnormal_diagonal",
+      "description": "f=min_subnormal*(x0/0.75)^2; exact represented stencil rounds to four minimum subnormals",
+      "point": [
+        0.0
+      ],
+      "eps": 0.75,
+      "calls": [
+        {
+          "point": [
+            0.0
+          ],
+          "point_hex": [
+            "0x0.0p+0"
+          ],
+          "value": 0.0,
+          "value_hex": "0x0.0p+0"
+        },
+        {
+          "point": [
+            0.75
+          ],
+          "point_hex": [
+            "0x1.8000000000000p-1"
+          ],
+          "value": 5e-324,
+          "value_hex": "0x0.0000000000001p-1022"
+        },
+        {
+          "point": [
+            -0.75
+          ],
+          "point_hex": [
+            "-0x1.8000000000000p-1"
+          ],
+          "value": 5e-324,
+          "value_hex": "0x0.0000000000001p-1022"
+        }
+      ],
+      "outcome": {
+        "hessian": [
+          [
+            1.5e-323
+          ]
+        ],
+        "hessian_hex": [
+          [
+            "0x0.0000000000003p-1022"
+          ]
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "name": "subnormal_mixed",
+      "description": "f=min_subnormal*(x0/0.75)*(x1/0.75); exact represented Hxy rounds to two minimum subnormals",
+      "point": [
+        0.0,
+        0.0
+      ],
+      "eps": 0.75,
+      "calls": [
+        {
+          "point": [
+            0.0,
+            0.0
+          ],
+          "point_hex": [
+            "0x0.0p+0",
+            "0x0.0p+0"
+          ],
+          "value": 0.0,
+          "value_hex": "0x0.0p+0"
+        },
+        {
+          "point": [
+            0.75,
+            0.0
+          ],
+          "point_hex": [
+            "0x1.8000000000000p-1",
+            "0x0.0p+0"
+          ],
+          "value": 0.0,
+          "value_hex": "0x0.0p+0"
+        },
+        {
+          "point": [
+            -0.75,
+            0.0
+          ],
+          "point_hex": [
+            "-0x1.8000000000000p-1",
+            "0x0.0p+0"
+          ],
+          "value": -0.0,
+          "value_hex": "-0x0.0p+0"
+        },
+        {
+          "point": [
+            0.0,
+            0.75
+          ],
+          "point_hex": [
+            "0x0.0p+0",
+            "0x1.8000000000000p-1"
+          ],
+          "value": 0.0,
+          "value_hex": "0x0.0p+0"
+        },
+        {
+          "point": [
+            0.0,
+            -0.75
+          ],
+          "point_hex": [
+            "0x0.0p+0",
+            "-0x1.8000000000000p-1"
+          ],
+          "value": -0.0,
+          "value_hex": "-0x0.0p+0"
+        },
+        {
+          "point": [
+            0.75,
+            0.75
+          ],
+          "point_hex": [
+            "0x1.8000000000000p-1",
+            "0x1.8000000000000p-1"
+          ],
+          "value": 5e-324,
+          "value_hex": "0x0.0000000000001p-1022"
+        },
+        {
+          "point": [
+            -0.75,
+            0.75
+          ],
+          "point_hex": [
+            "-0x1.8000000000000p-1",
+            "0x1.8000000000000p-1"
+          ],
+          "value": -5e-324,
+          "value_hex": "-0x0.0000000000001p-1022"
+        },
+        {
+          "point": [
+            0.75,
+            -0.75
+          ],
+          "point_hex": [
+            "0x1.8000000000000p-1",
+            "-0x1.8000000000000p-1"
+          ],
+          "value": -5e-324,
+          "value_hex": "-0x0.0000000000001p-1022"
+        },
+        {
+          "point": [
+            -0.75,
+            -0.75
+          ],
+          "point_hex": [
+            "-0x1.8000000000000p-1",
+            "-0x1.8000000000000p-1"
+          ],
+          "value": 5e-324,
+          "value_hex": "0x0.0000000000001p-1022"
+        }
+      ],
+      "outcome": {
+        "hessian": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "hessian_hex": [
+          [
+            "0x0.0p+0",
+            "0x0.0p+0"
+          ],
+          [
+            "0x0.0p+0",
+            "0x0.0p+0"
+          ]
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "name": "unrepresentable_overflow",
+      "description": "finite captured values but curvature overflows float64",
+      "point": [
+        0.0
+      ],
+      "eps": 0.0001,
+      "calls": [
+        {
+          "point": [
+            0.0
+          ],
+          "point_hex": [
+            "0x0.0p+0"
+          ],
+          "value": -1e+308,
+          "value_hex": "-0x1.1ccf385ebc8a0p+1023"
+        },
+        {
+          "point": [
+            0.0001
+          ],
+          "point_hex": [
+            "0x1.a36e2eb1c432dp-14"
+          ],
+          "value": 1e+308,
+          "value_hex": "0x1.1ccf385ebc8a0p+1023"
+        },
+        {
+          "point": [
+            -0.0001
+          ],
+          "point_hex": [
+            "-0x1.a36e2eb1c432dp-14"
+          ],
+          "value": 1e+308,
+          "value_hex": "0x1.1ccf385ebc8a0p+1023"
+        }
+      ],
+      "outcome": {
+        "error_type": "FloatingPointError",
+        "error": "finite differences produced a non-finite Hessian"
+      },
+      "warnings": []
+    },
+    {
+      "name": "unrepresentable_underflow",
+      "description": "nonzero captured curvature rounds to zero in float64",
+      "point": [
+        0.0
+      ],
+      "eps": 1e+154,
+      "calls": [
+        {
+          "point": [
+            0.0
+          ],
+          "point_hex": [
+            "0x0.0p+0"
+          ],
+          "value": 0.0,
+          "value_hex": "0x0.0p+0"
+        },
+        {
+          "point": [
+            1e+154
+          ],
+          "point_hex": [
+            "0x1.7dddf6b095ff1p+511"
+          ],
+          "value": 5e-324,
+          "value_hex": "0x0.0000000000001p-1022"
+        },
+        {
+          "point": [
+            -1e+154
+          ],
+          "point_hex": [
+            "-0x1.7dddf6b095ff1p+511"
+          ],
+          "value": 5e-324,
+          "value_hex": "0x0.0000000000001p-1022"
+        }
+      ],
+      "outcome": {
+        "hessian": [
+          [
+            0.0
+          ]
+        ],
+        "hessian_hex": [
+          [
+            "0x0.0p+0"
+          ]
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "name": "ordinary_demo",
+      "description": "existing sine/cosine demo",
+      "point": [
+        1.0,
+        2.0
+      ],
+      "eps": 0.0001,
+      "calls": [
+        {
+          "point": [
+            1.0,
+            2.0
+          ],
+          "point_hex": [
+            "0x1.0000000000000p+0",
+            "0x1.0000000000000p+1"
+          ],
+          "value": 0.4253241482607541,
+          "value_hex": "0x1.b3882c6bea7d7p-2"
+        },
+        {
+          "point": [
+            1.0001,
+            2.0
+          ],
+          "point_hex": [
+            "0x1.00068db8bac71p+0",
+            "0x1.0000000000000p+1"
+          ],
+          "value": 0.42537817428389596,
+          "value_hex": "0x1.b396560bed13fp-2"
+        },
+        {
+          "point": [
+            0.9999,
+            2.0
+          ],
+          "point_hex": [
+            "0x1.fff2e48e8a71ep-1",
+            "0x1.0000000000000p+1"
+          ],
+          "value": 0.4252701138229024,
+          "value_hex": "0x1.b37a023b579dfp-2"
+        },
+        {
+          "point": [
+            1.0,
+            2.0001
+          ],
+          "point_hex": [
+            "0x1.0000000000000p+0",
+            "0x1.000346dc5d639p+1"
+          ],
+          "value": 0.4252332205989571,
+          "value_hex": "0x1.b370565e94c2cp-2"
+        },
+        {
+          "point": [
+            1.0,
+            1.9999
+          ],
+          "point_hex": [
+            "0x1.0000000000000p+0",
+            "0x1.fff972474538fp+0"
+          ],
+          "value": 0.4254150800840193,
+          "value_hex": "0x1.b3a002c0be8ccp-2"
+        },
+        {
+          "point": [
+            1.0001,
+            2.0001
+          ],
+          "point_hex": [
+            "0x1.00068db8bac71p+0",
+            "0x1.000346dc5d639p+1"
+          ],
+          "value": 0.42528724662209894,
+          "value_hex": "0x1.b37e7ffe97594p-2"
+        },
+        {
+          "point": [
+            0.9999,
+            2.0001
+          ],
+          "point_hex": [
+            "0x1.fff2e48e8a71ep-1",
+            "0x1.000346dc5d639p+1"
+          ],
+          "value": 0.4251791861611054,
+          "value_hex": "0x1.b3622c2e01e34p-2"
+        },
+        {
+          "point": [
+            1.0001,
+            1.9999
+          ],
+          "point_hex": [
+            "0x1.00068db8bac71p+0",
+            "0x1.fff972474538fp+0"
+          ],
+          "value": 0.42546910610716115,
+          "value_hex": "0x1.b3ae2c60c1234p-2"
+        },
+        {
+          "point": [
+            0.9999,
+            1.9999
+          ],
+          "point_hex": [
+            "0x1.fff2e48e8a71ep-1",
+            "0x1.fff972474538fp+0"
+          ],
+          "value": 0.4253610456461676,
+          "value_hex": "0x1.b391d8902bad4p-2"
+        }
+      ],
+      "outcome": {
+        "hessian": [
+          [
+            -0.8414709817828697,
+            0.0
+          ],
+          [
+            0.0,
+            0.4161468371961798
+          ]
+        ],
+        "hessian_hex": [
+          [
+            "-0x1.aed548d694b43p-1",
+            "0x0.0p+0"
+          ],
+          [
+            "0x0.0p+0",
+            "0x1.aa2265805d9f7p-2"
+          ]
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "name": "ordinary_quadratic",
+      "description": "ordinary quadratic with analytic H=[[6,4],[4,10]]",
+      "point": [
+        0.5,
+        -0.25
+      ],
+      "eps": 0.001,
+      "calls": [
+        {
+          "point": [
+            0.5,
+            -0.25
+          ],
+          "point_hex": [
+            "0x1.0000000000000p-1",
+            "-0x1.0000000000000p-2"
+          ],
+          "value": 0.5625,
+          "value_hex": "0x1.2000000000000p-1"
+        },
+        {
+          "point": [
+            0.501,
+            -0.25
+          ],
+          "point_hex": [
+            "0x1.0083126e978d5p-1",
+            "-0x1.0000000000000p-2"
+          ],
+          "value": 0.5645029999999999,
+          "value_hex": "0x1.21068986fcdedp-1"
+        },
+        {
+          "point": [
+            0.499,
+            -0.25
+          ],
+          "point_hex": [
+            "0x1.fef9db22d0e56p-2",
+            "-0x1.0000000000000p-2"
+          ],
+          "value": 0.560503,
+          "value_hex": "0x1.1efa3fcc9ea9ap-1"
+        },
+        {
+          "point": [
+            0.5,
+            -0.249
+          ],
+          "point_hex": [
+            "0x1.0000000000000p-1",
+            "-0x1.fdf3b645a1cacp-3"
+          ],
+          "value": 0.562005,
+          "value_hex": "0x1.1fbf1e8e60807p-1"
+        },
+        {
+          "point": [
+            0.5,
+            -0.251
+          ],
+          "point_hex": [
+            "0x1.0000000000000p-1",
+            "-0x1.010624dd2f1aap-2"
+          ],
+          "value": 0.563005,
+          "value_hex": "0x1.204230fcf80dcp-1"
+        },
+        {
+          "point": [
+            0.501,
+            -0.249
+          ],
+          "point_hex": [
+            "0x1.0083126e978d5p-1",
+            "-0x1.fdf3b645a1cacp-3"
+          ],
+          "value": 0.5640119999999998,
+          "value_hex": "0x1.20c62e4d1a64fp-1"
+        },
+        {
+          "point": [
+            0.499,
+            -0.249
+          ],
+          "point_hex": [
+            "0x1.fef9db22d0e56p-2",
+            "-0x1.fdf3b645a1cacp-3"
+          ],
+          "value": 0.560004,
+          "value_hex": "0x1.1eb8d82342246p-1"
+        },
+        {
+          "point": [
+            0.501,
+            -0.251
+          ],
+          "point_hex": [
+            "0x1.0083126e978d5p-1",
+            "-0x1.010624dd2f1aap-2"
+          ],
+          "value": 0.5650039999999998,
+          "value_hex": "0x1.2148344c37e6ep-1"
+        },
+        {
+          "point": [
+            0.499,
+            -0.251
+          ],
+          "point_hex": [
+            "0x1.fef9db22d0e56p-2",
+            "-0x1.010624dd2f1aap-2"
+          ],
+          "value": 0.561012,
+          "value_hex": "0x1.1f3cf70153bd1p-1"
+        }
+      ],
+      "outcome": {
+        "hessian": [
+          [
+            5.999999999839462,
+            4.000000000003997
+          ],
+          [
+            4.000000000003997,
+            9.99999999995448
+          ]
+        ],
+        "hessian_hex": [
+          [
+            "0x1.7fffffffd3df2p+2",
+            "0x1.0000000001194p+2"
+          ],
+          [
+            "0x1.0000000001194p+2",
+            "0x1.3ffffffff9be7p+3"
+          ]
+        ]
+      },
+      "warnings": []
+    }
+  ],
+  "inherited_suite": {
+    "command": "python -m unittest discover -s tests -v",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "test_does_not_mutate_input (test_hessian.FiniteDifferenceHessianTests.test_does_not_mutate_input) ... ok\ntest_matches_analytic_hessian_for_demo_objective (test_hessian.FiniteDifferenceHessianTests.test_matches_analytic_hessian_for_demo_objective) ... ok\ntest_output_is_symmetric_for_smooth_scalar_objective (test_hessian.FiniteDifferenceHessianTests.test_output_is_symmetric_for_smooth_scalar_objective) ... ok\ntest_constant_large_finite_offset_has_zero_hessian (test_hessian_contracts.HessianContractTests.test_constant_large_finite_offset_has_zero_hessian) ... ok\ntest_cross_partials_are_symmetric_and_redundant_evaluations_are_avoided (test_hessian_contracts.HessianContractTests.test_cross_partials_are_symmetric_and_redundant_evaluations_are_avoided) ... ok\ntest_integer_and_low_precision_inputs_match_mixed_analytic_hessian (test_hessian_contracts.HessianContractTests.test_integer_and_low_precision_inputs_match_mixed_analytic_hessian) ... ok\ntest_invalid_coordinates_fail_before_objective (test_hessian_contracts.HessianContractTests.test_invalid_coordinates_fail_before_objective) ... ok\ntest_invalid_steps_fail_before_objective (test_hessian_contracts.HessianContractTests.test_invalid_steps_fail_before_objective) ... ok\ntest_nonfinite_curvature_is_rejected (test_hessian_contracts.HessianContractTests.test_nonfinite_curvature_is_rejected) ... ok\ntest_nonscalar_complex_and_nonfinite_outputs_fail (test_hessian_contracts.HessianContractTests.test_nonscalar_complex_and_nonfinite_outputs_fail) ... ok\ntest_objective_cannot_modify_callers_input (test_hessian_contracts.HessianContractTests.test_objective_cannot_modify_callers_input) ... ok\ntest_python_sequence_is_supported (test_hessian_contracts.HessianContractTests.test_python_sequence_is_supported) ... ok\ntest_single_coordinate_diagonal (test_hessian_contracts.HessianContractTests.test_single_coordinate_diagonal) ... ok\ntest_unresolvable_coordinate_step_fails_before_objective (test_hessian_contracts.HessianContractTests.test_unresolvable_coordinate_step_fails_before_objective) ... ok\ntest_actual_representable_steps_recover_shifted_quadratic (test_independent_represented_steps.IndependentStepReviewTests.test_actual_representable_steps_recover_shifted_quadratic) ... ok\ntest_asymmetric_representable_steps_do_not_invent_linear_curvature (test_independent_represented_steps.IndependentStepReviewTests.test_asymmetric_representable_steps_do_not_invent_linear_curvature) ... ok\ntest_mixed_curvature_uses_actual_steps_in_both_coordinates (test_independent_represented_steps.IndependentStepReviewTests.test_mixed_curvature_uses_actual_steps_in_both_coordinates) ... ok\ntest_linear_objective_has_no_spurious_curvature_at_binade_boundary (test_represented_steps.RepresentedStepTests.test_linear_objective_has_no_spurious_curvature_at_binade_boundary) ... ok\ntest_mixed_quadratic_uses_actual_coordinate_distances (test_represented_steps.RepresentedStepTests.test_mixed_quadratic_uses_actual_coordinate_distances) ... ok\ntest_symmetric_rounded_steps_do_not_use_requested_denominator (test_represented_steps.RepresentedStepTests.test_symmetric_rounded_steps_do_not_use_requested_denominator) ... ok\n\n----------------------------------------------------------------------\nRan 20 tests in 0.205s\n\nOK\n"
+  },
+  "scientific_runs": 0,
+  "research_complete": false
+}

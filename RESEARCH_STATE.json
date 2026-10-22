@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "project": "RIS",
+  "updated_utc": "2026-10-22T11:58:00.826285+00:00",
+  "current_phase": "ENGINEERING_INTEGRATION_REVIEWED_AWAITING_FINAL_HEAD_CI",
+  "scientific_disposition": "NUMERICAL_PROTOTYPE; no completed scientific study asserted",
+  "scientific_scope_authority": [
+    "README.md"
+  ],
+  "engineering_question": "Recover finite curvature when intermediate stencil arithmetic exceeds float64 range",
+  "current_change": "Preserve ordinary nonuniform diagonal/mixed arithmetic; use a fixed exact-rational fallback over captured float64 samples on range failure. Preserve represented steps, input admission, objective order/count and exact symmetry; reject genuinely unrepresentable curvature. Prior represented-distance repairs and all 20 earlier tests remain intact.",
+  "required_session_reads": [
+    "README.md",
+    "research/ENGINEERING_NUMERICAL_INTEGRITY_20261010.json",
+    "research/INDEPENDENT_NUMERICAL_REVIEW_20261010.json",
+    "research/STENCIL_ARITHMETIC_CONTRACT_20261010.md",
+    "research/STENCIL_ARITHMETIC_VERIFICATION_20261010.json"
+  ],
+  "protected_boundary": "Analytic numerical regressions establish stencil correctness only; absolute-step choice and cancellation limits remain.",
+  "protected_evaluation_opened": false,
+  "scientific_runs_this_revision": 0,
+  "research_complete": false,
+  "execution_budget": {
+    "scope": "bounded constructed regressions and existing correctness tests only",
+    "paid_compute": false,
+    "training_campaigns": 0,
+    "protected_runs": 0
+  },
+  "pending_gates": [
+    "Publish the canonical integration checkpoint and require fresh unchanged Python smoke on its exact head; then merge complete descendant PR5 to main and mark PR4 integrated with ancestry evidence.",
+    "A future scientific study still requires its own hypothesis, specification, methodology, freeze, evidence and release gates. The current numerical prototype is not research-complete."
+  ],
+  "history": [
+    {
+      "date": "2026-10-10",
+      "kind": "engineering_revision",
+      "record": "research/ENGINEERING_NUMERICAL_INTEGRITY_20261010.json",
+      "status": "implemented; 17 bounded tests passed; integration pending",
+      "scientific_outcomes_created": false
+    },
+    {
+      "date": "2026-10-10",
+      "kind": "independent_engineering_review",
+      "record": "research/INDEPENDENT_NUMERICAL_REVIEW_20261010.json",
+      "status": "20 bounded methods passed on the concurrently repaired source; no source edit by this review follow-up; integration pending",
+      "scientific_outcomes_created": false
+    },
+    {
+      "date": "2026-10-10",
+      "kind": "prospective_stencil_arithmetic_revision",
+      "contract": "research/STENCIL_ARITHMETIC_CONTRACT_20261010.md",
+      "baseline_record": "research/STENCIL_ARITHMETIC_BASELINE_20261010.json",
+      "record": "research/STENCIL_ARITHMETIC_VERIFICATION_20261010.json",
+      "status": "32 methods passed locally, independently and on the exact published code head; six independent probes and all 11 captured stencils passed; draft integration pending",
+      "scientific_outcomes_created": false,
+      "independent_review": "APPROVED_WITHIN_PROSPECTIVE_CONTRACT",
+      "publication": {
+        "draft_pr": 5,
+        "url": "https://github.com/build-the-future-11/RIS/pull/5",
+        "base_commit": "cae6c530f218b0802ab269f99c5272d71f511048",
+        "prospective_commit": "dd57481b2c053860a4f2b091254f6ac3582830b3",
+        "implementation_commit": "82c9a66cda569db9e2fe7bce9669c9d65b40d0c4",
+        "implementation_tree": "78e37b912937f25dc5dc364ea8a607b272ddd5a1",
+        "changed_blobs_and_modes_verified": 9,
+        "untouched_blobs_and_modes_verified": 9
+      },
+      "hosted_verification": {
+        "run_id": 38031661091,
+        "job_id": 114153706290,
+        "head_commit": "82c9a66cda569db9e2fe7bce9669c9d65b40d0c4",
+        "url": "https://github.com/build-the-future-11/RIS/actions/runs/38031661091",
+        "conclusion": "success",
+        "python": "3.11.17",
+        "numpy": "2.4.6",
+        "passed_methods": 32,
+        "seconds": 0.052,
+        "failed_methods": 0,
+        "skipped_methods": 0,
+        "exact_head_assertion": "passed",
+        "compilation": "passed",
+        "dependency_install": "passed",
+        "existing_demo": "passed",
+        "count_boundary": "Hosted repetition of the same 32 methods; no additional distinct coverage or scientific qualification."
+      }
+    },
+    {
+      "date": "2026-10-22",
+      "kind": "complete_descendant_integration_review",
+      "reviewed_commit": "49d167b387981662450a1f8c475f28f4c9d9fe5a",
+      "reviewed_tree": "784240a52f4a48103fc70f75d048c211d616bfa6",
+      "included_prs": [
+        4,
+        5
+      ],
+      "record": "research/GITHUB_INTEGRATION_REVIEW_20261022.md",
+      "status": "Source, existing tests, contract, full ancestry and exact-head CI reviewed. No concrete blocker in the stated engineering scope; final metadata/documentation head CI and integration pending.",
+      "runtime_source_changed_this_review": false,
+      "tests_executed_this_review": 0,
+      "scientific_outcomes_created": false
+    }
+  ],
+  "history_index_scope": "Index to retained project records and this revision; not a reconstruction or replacement of the complete git/artifact history.",
+  "previous_checkpoints": [
+    {
+      "parent_commit": "49d167b387981662450a1f8c475f28f4c9d9fe5a",
+      "canonical_state": "research/integration_20261022/parent_RESEARCH_STATE.json",
+      "pending_gates": [
+        "The published implementation passed independent review and exact-head hosted CI. Integration remains pending in draft #5 stacked on unchanged #4; scientific gates remain separate.",
+        "Scientific hypothesis/specification/methodology/freeze/evidence/release gates remain governed by the retained study contracts."
+      ],
+      "current_phase": "ENGINEERING_DEVELOPMENT_REVIEW",
+      "current_change": "Preserve ordinary nonuniform diagonal/mixed arithmetic; use a fixed exact-rational fallback over captured float64 samples on range failure. Preserve represented steps, input admission, objective order/count and exact symmetry; reject genuinely unrepresentable curvature. Prior represented-distance repairs and all 20 earlier tests remain intact."
+    }
+  ],
+  "integration_checkpoint": {
+    "mode": "engineering_only",
+    "reviewed_head": "49d167b387981662450a1f8c475f28f4c9d9fe5a",
+    "parent_pr4": "cae6c530f218b0802ab269f99c5272d71f511048",
+    "main_at_review": "ddfcb5e532d00362cdd5cf472799a01cb9464a72",
+    "ancestry": "PR4 and main are both ancestors of PR5; ahead3/behind0 and ahead6/behind0 respectively.",
+    "evidence": "research/integration_20261022/parent_ancestry_and_ci_receipt.json",
+    "historical_exact_head_ci": {
+      "run_id": 38031777245,
+      "job_id": 114154052480,
+      "head": "49d167b387981662450a1f8c475f28f4c9d9fe5a",
+      "status": "success",
+      "methods": 32,
+      "seconds": 0.038,
+      "scope": "Read back exact immutable source/run/job/log; not rerun locally in this review."
+    },
+    "current_change": "Canonical checkpoint, append-only review/evidence receipts, and one README correction: requirements.txt declares only NumPy. No runtime, test, dependency or workflow changes.",
+    "final_head_hosted_gate": "REQUIRED_PENDING",
+    "scientific_disposition_changed": false,
+    "prior_development_budgets": "Remain closed; no new numerical fixtures, objective measurements or scientific executions in this review."
+  }
+}

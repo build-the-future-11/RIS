@@ -1,0 +1,253 @@
+{
+  "schema": "ris.stencil-arithmetic.replay.v1",
+  "source_sha256": "ffe40184ba973797e3c4da46dcf0fc1080e3031ae79908220743c139345d907c",
+  "baseline_sha256": "fe90c02d3acea18bed8fa80caad5fe4c43d4c2ccf4cdddfcacbd985d03ed43c2",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "scope": "Replay retained float64 samples; no new objective measurements or scientific run.",
+  "scenarios": [
+    {
+      "name": "large_diagonal",
+      "outcome": {
+        "hessian": [
+          [
+            3.9999999999999996
+          ]
+        ],
+        "hessian_hex": [
+          [
+            "0x1.fffffffffffffp+1"
+          ]
+        ]
+      },
+      "call_count": 3,
+      "same_call_order_as_baseline": true,
+      "same_output_bits_as_baseline": null,
+      "warnings": []
+    },
+    {
+      "name": "large_mixed",
+      "outcome": {
+        "hessian": [
+          [
+            0.0,
+            0.49999999999999994
+          ],
+          [
+            0.49999999999999994,
+            0.0
+          ]
+        ],
+        "hessian_hex": [
+          [
+            "0x0.0p+0",
+            "0x1.fffffffffffffp-2"
+          ],
+          [
+            "0x1.fffffffffffffp-2",
+            "0x0.0p+0"
+          ]
+        ]
+      },
+      "call_count": 9,
+      "same_call_order_as_baseline": true,
+      "same_output_bits_as_baseline": null,
+      "warnings": []
+    },
+    {
+      "name": "nonuniform_diagonal",
+      "outcome": {
+        "hessian": [
+          [
+            35.60118173611522
+          ]
+        ],
+        "hessian_hex": [
+          [
+            "0x1.1ccf385ebc8a0p+5"
+          ]
+        ]
+      },
+      "call_count": 3,
+      "same_call_order_as_baseline": true,
+      "same_output_bits_as_baseline": null,
+      "warnings": []
+    },
+    {
+      "name": "nonuniform_mixed",
+      "outcome": {
+        "hessian": [
+          [
+            0.0,
+            4.450147717014403
+          ],
+          [
+            4.450147717014403,
+            0.0
+          ]
+        ],
+        "hessian_hex": [
+          [
+            "0x0.0p+0",
+            "0x1.1ccf385ebc8a0p+2"
+          ],
+          [
+            "0x1.1ccf385ebc8a0p+2",
+            "0x0.0p+0"
+          ]
+        ]
+      },
+      "call_count": 9,
+      "same_call_order_as_baseline": true,
+      "same_output_bits_as_baseline": null,
+      "warnings": []
+    },
+    {
+      "name": "exact_affine_cancellation",
+      "outcome": {
+        "hessian": [
+          [
+            0.0
+          ]
+        ],
+        "hessian_hex": [
+          [
+            "0x0.0p+0"
+          ]
+        ]
+      },
+      "call_count": 3,
+      "same_call_order_as_baseline": true,
+      "same_output_bits_as_baseline": null,
+      "warnings": []
+    },
+    {
+      "name": "subnormal_diagonal",
+      "outcome": {
+        "hessian": [
+          [
+            2e-323
+          ]
+        ],
+        "hessian_hex": [
+          [
+            "0x0.0000000000004p-1022"
+          ]
+        ]
+      },
+      "call_count": 3,
+      "same_call_order_as_baseline": true,
+      "same_output_bits_as_baseline": false,
+      "warnings": []
+    },
+    {
+      "name": "subnormal_mixed",
+      "outcome": {
+        "hessian": [
+          [
+            0.0,
+            1e-323
+          ],
+          [
+            1e-323,
+            0.0
+          ]
+        ],
+        "hessian_hex": [
+          [
+            "0x0.0p+0",
+            "0x0.0000000000002p-1022"
+          ],
+          [
+            "0x0.0000000000002p-1022",
+            "0x0.0p+0"
+          ]
+        ]
+      },
+      "call_count": 9,
+      "same_call_order_as_baseline": true,
+      "same_output_bits_as_baseline": false,
+      "warnings": []
+    },
+    {
+      "name": "unrepresentable_overflow",
+      "outcome": {
+        "error_type": "FloatingPointError",
+        "error": "finite differences produced a non-finite Hessian"
+      },
+      "call_count": 3,
+      "same_call_order_as_baseline": true,
+      "same_output_bits_as_baseline": null,
+      "warnings": []
+    },
+    {
+      "name": "unrepresentable_underflow",
+      "outcome": {
+        "error_type": "FloatingPointError",
+        "error": "finite differences produced unrepresentable nonzero curvature"
+      },
+      "call_count": 3,
+      "same_call_order_as_baseline": true,
+      "same_output_bits_as_baseline": null,
+      "warnings": []
+    },
+    {
+      "name": "ordinary_demo",
+      "outcome": {
+        "hessian": [
+          [
+            -0.8414709817828697,
+            0.0
+          ],
+          [
+            0.0,
+            0.4161468371961798
+          ]
+        ],
+        "hessian_hex": [
+          [
+            "-0x1.aed548d694b43p-1",
+            "0x0.0p+0"
+          ],
+          [
+            "0x0.0p+0",
+            "0x1.aa2265805d9f7p-2"
+          ]
+        ]
+      },
+      "call_count": 9,
+      "same_call_order_as_baseline": true,
+      "same_output_bits_as_baseline": true,
+      "warnings": []
+    },
+    {
+      "name": "ordinary_quadratic",
+      "outcome": {
+        "hessian": [
+          [
+            5.999999999839462,
+            4.000000000003997
+          ],
+          [
+            4.000000000003997,
+            9.99999999995448
+          ]
+        ],
+        "hessian_hex": [
+          [
+            "0x1.7fffffffd3df2p+2",
+            "0x1.0000000001194p+2"
+          ],
+          [
+            "0x1.0000000001194p+2",
+            "0x1.3ffffffff9be7p+3"
+          ]
+        ]
+      },
+      "call_count": 9,
+      "same_call_order_as_baseline": true,
+      "same_output_bits_as_baseline": true,
+      "warnings": []
+    }
+  ]
+}
