@@ -1,0 +1,199 @@
+{
+  "repository": "build-the-future-11/RIS",
+  "head": "49d167b387981662450a1f8c475f28f4c9d9fe5a",
+  "actual_commit_tree": "784240a52f4a48103fc70f75d048c211d616bfa6",
+  "sources": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "mode": "100644",
+      "git_blob": "e8faaa61fb7793c3de9b30564d9b199a873d3a33",
+      "sha256": "294a96439cbbe57dfd62b80eccb48872103f9cd8f9bf4fdfeebd2159561d008a",
+      "bytes": 1466
+    },
+    {
+      "path": "AGENTS.md",
+      "mode": "100644",
+      "git_blob": "03f6cf58e0f09aff6f3cc8dd3a9241c320bbff52",
+      "sha256": "55c63bd2ea207b6e5a9c18f32016b65f3b26180cda8117173ed0102c7f5ec78b",
+      "bytes": 645
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "git_blob": "f89b6fd1a6d9d92db6d0e2745737114b8be676ca",
+      "sha256": "7ca4c308ae2d471c8144e27fae7d59d145290366270ca541de08dd572c52c778",
+      "bytes": 4117
+    },
+    {
+      "path": "RESEARCH_STATE.json",
+      "mode": "100644",
+      "git_blob": "32752dd6f65b710b97fd64fdc067ab878d974510",
+      "sha256": "aad330187b240d37aad2d534c26c16b8a0264fad50d1592804742baf7157309a",
+      "bytes": 4502
+    },
+    {
+      "path": "main.py",
+      "mode": "100644",
+      "git_blob": "f8ec3ea6334dd34684fdcabcdb45d62e3393d01c",
+      "sha256": "ffe40184ba973797e3c4da46dcf0fc1080e3031ae79908220743c139345d907c",
+      "bytes": 6293
+    },
+    {
+      "path": "requirements.txt",
+      "mode": "100644",
+      "git_blob": "726a10393c7435c8a28afb5b6c3335831d9441a2",
+      "sha256": "99f43573522565d7c480efd1f954892948033915df6a4e685327e995d3396eb6",
+      "bytes": 15
+    },
+    {
+      "path": "research/ENGINEERING_NUMERICAL_INTEGRITY_20261010.json",
+      "mode": "100644",
+      "git_blob": "29d8832c8e8766cd813705353ae5c6e6b8ef0347",
+      "sha256": "7964214058212dcb321378b7112e2636ad141b834cee09287addf8d6720ebc20",
+      "bytes": 2441
+    },
+    {
+      "path": "research/INDEPENDENT_NUMERICAL_REVIEW_20261010.json",
+      "mode": "100644",
+      "git_blob": "c721634abc6780b047e4802b96c62b0485e5ff98",
+      "sha256": "e5cca421f11cd8a3968a06998923b9141bbe44fb2f0ec428f51164ca1fb112ad",
+      "bytes": 3478
+    },
+    {
+      "path": "research/STENCIL_ARITHMETIC_BASELINE_20261010.json",
+      "mode": "100644",
+      "git_blob": "2ae10a08681fa0d3985f6661543abbe09fa0bb89",
+      "sha256": "fe90c02d3acea18bed8fa80caad5fe4c43d4c2ccf4cdddfcacbd985d03ed43c2",
+      "bytes": 25914
+    },
+    {
+      "path": "research/STENCIL_ARITHMETIC_CONTRACT_20261010.md",
+      "mode": "100644",
+      "git_blob": "9c35bd8e234834e0bbd918014458685ca579065d",
+      "sha256": "5b5775311e41eea9bee657959e3a1f9fe03a2f6adad2bed2912d3c8f31e75770",
+      "bytes": 5982
+    },
+    {
+      "path": "research/STENCIL_ARITHMETIC_REPLAY_20261010.json",
+      "mode": "100644",
+      "git_blob": "798cea98016d9430566abe324d2338bb541b117e",
+      "sha256": "49dc9e00ce89b807a6822c2b942aefdfcbdbd0bd52a7a0defe7d9ce2538bf08c",
+      "bytes": 5529
+    },
+    {
+      "path": "research/STENCIL_ARITHMETIC_VERIFICATION_20261010.json",
+      "mode": "100644",
+      "git_blob": "ce257cf913343d2594f7746540b6d902ab9e5f2c",
+      "sha256": "3b31ee3a2aee39a5bd0758eaf20655517deed6e5a227bcb70d9b9c37b514b74e",
+      "bytes": 58957
+    },
+    {
+      "path": "research/replay_stencil_arithmetic.py",
+      "mode": "100644",
+      "git_blob": "dc8f717bee93f7bcaeb0ba4658972234ccbcd7a7",
+      "sha256": "c65016ec874f94b2a3399d2f2711f888f350f6792dbc8b602f33dd2207d8aa1e",
+      "bytes": 3230
+    },
+    {
+      "path": "tests/test_hessian.py",
+      "mode": "100644",
+      "git_blob": "d9841c69dab59c887c9adf7ff6fdf94f0eecbe66",
+      "sha256": "7261af94d920a64ab3389dd14502550b99ec5e623f5b99ebbbef896456971d69",
+      "bytes": 982
+    },
+    {
+      "path": "tests/test_hessian_contracts.py",
+      "mode": "100644",
+      "git_blob": "b36ffae40f296b6da888881c82267063a0045e10",
+      "sha256": "1fb80cbe307c77ad51cbdaaff3be800dc144062c66bd8b2baf709439c2fffbd0",
+      "bytes": 3878
+    },
+    {
+      "path": "tests/test_independent_represented_steps.py",
+      "mode": "100644",
+      "git_blob": "709dc20b742e0e590416bf7e96baae2f866f911a",
+      "sha256": "5d34e27afe1155e2484d79ea82932a06058a4c990cd390809d0679b776525680",
+      "bytes": 1378
+    },
+    {
+      "path": "tests/test_represented_steps.py",
+      "mode": "100644",
+      "git_blob": "7d0832171ea9853bb9b4542adb345bcd16561fa4",
+      "sha256": "08a6108f577b0c9842f088d61e0e4d588e86907c567321c7464d9167fb798410",
+      "bytes": 1422
+    },
+    {
+      "path": "tests/test_stencil_arithmetic.py",
+      "mode": "100644",
+      "git_blob": "96ab9074c1c69073983260f6fe0a3e2475ef7568",
+      "sha256": "fcbb6d184fb6c6cf7e9b034395e184f466ad360ef436d9627e829b64396999b0",
+      "bytes": 9262
+    }
+  ],
+  "retained_record_hash_checks": [
+    {
+      "kind": "source_or_evidence",
+      "path": "main.py",
+      "sha256": "ffe40184ba973797e3c4da46dcf0fc1080e3031ae79908220743c139345d907c"
+    },
+    {
+      "kind": "source_or_evidence",
+      "path": "tests/test_stencil_arithmetic.py",
+      "sha256": "fcbb6d184fb6c6cf7e9b034395e184f466ad360ef436d9627e829b64396999b0"
+    },
+    {
+      "kind": "source_or_evidence",
+      "path": "research/replay_stencil_arithmetic.py",
+      "sha256": "c65016ec874f94b2a3399d2f2711f888f350f6792dbc8b602f33dd2207d8aa1e"
+    },
+    {
+      "kind": "source_or_evidence",
+      "path": "research/STENCIL_ARITHMETIC_CONTRACT_20261010.md",
+      "sha256": "5b5775311e41eea9bee657959e3a1f9fe03a2f6adad2bed2912d3c8f31e75770"
+    },
+    {
+      "kind": "source_or_evidence",
+      "path": "research/STENCIL_ARITHMETIC_BASELINE_20261010.json",
+      "sha256": "fe90c02d3acea18bed8fa80caad5fe4c43d4c2ccf4cdddfcacbd985d03ed43c2"
+    },
+    {
+      "kind": "source_or_evidence",
+      "path": "research/STENCIL_ARITHMETIC_REPLAY_20261010.json",
+      "sha256": "49dc9e00ce89b807a6822c2b942aefdfcbdbd0bd52a7a0defe7d9ce2538bf08c"
+    },
+    {
+      "kind": "embedded_independent_artifact",
+      "path": "/workspace/scratch/686cff45990b/work/wave3-ris-independent-full.log",
+      "sha256": "f6fdf538892a17bc40a2e8f9e2742f724b493ad180f903af00668bb55f1b2c6b"
+    },
+    {
+      "kind": "embedded_independent_artifact",
+      "path": "/workspace/scratch/686cff45990b/work/wave3-ris-independent-baseline.json",
+      "sha256": "38181343fabb9bd9eb53698edd2c04e12fd205e5ff037d5de0833127833a5050"
+    },
+    {
+      "kind": "embedded_independent_artifact",
+      "path": "/workspace/scratch/686cff45990b/work/wave3-ris-independent-candidate.json",
+      "sha256": "9ad8facf4b876b237a4a62a59aaf7e705aa1bf0e49d2d5bd593ce695fe868caa"
+    },
+    {
+      "kind": "embedded_independent_artifact",
+      "path": "/workspace/scratch/686cff45990b/work/wave3-ris-independent-probes.py",
+      "sha256": "a23cdec56b55bb1a7072fedd0ecafa032d280ad0574ccb0675fd1b158c2bd861"
+    },
+    {
+      "kind": "embedded_independent_artifact",
+      "path": "/workspace/scratch/686cff45990b/work/wave3-ris-independent-replay.json",
+      "sha256": "49dc9e00ce89b807a6822c2b942aefdfcbdbd0bd52a7a0defe7d9ce2538bf08c"
+    }
+  ],
+  "static_method_counts": {
+    "test_hessian_contracts.py": 11,
+    "test_hessian.py": 3,
+    "test_independent_represented_steps.py": 3,
+    "test_represented_steps.py": 3,
+    "test_stencil_arithmetic.py": 12
+  },
+  "methods_executed_this_review": 0,
+  "scope": "Byte identity and static source/evidence review only; exact-head hosted evidence is recorded separately."
+}

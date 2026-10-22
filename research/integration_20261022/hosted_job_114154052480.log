@@ -1,0 +1,298 @@
+﻿2026-10-10T06:40:58.9667487Z Current runner version: '2.337.0'
+2026-10-10T06:40:58.9694800Z ##[group]Runner Image Provisioner
+2026-10-10T06:40:58.9695848Z Hosted Compute Agent
+2026-10-10T06:40:58.9696786Z Version: 20261002.596
+2026-10-10T06:40:58.9697624Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+2026-10-10T06:40:58.9698597Z Build Date: 2026-10-02T22:28:27Z
+2026-10-10T06:40:58.9699483Z Worker ID: {a0fc8bb8-1bc6-4c5b-9fa9-89ccb1aa8149}
+2026-10-10T06:40:58.9700359Z Region: westus3
+2026-10-10T06:40:58.9701204Z Cloud: Azure
+2026-10-10T06:40:58.9701842Z ##[endgroup]
+2026-10-10T06:40:58.9703698Z ##[group]Operating System
+2026-10-10T06:40:58.9704496Z Ubuntu
+2026-10-10T06:40:58.9705127Z 24.04.5
+2026-10-10T06:40:58.9705873Z LTS
+2026-10-10T06:40:58.9706497Z ##[endgroup]
+2026-10-10T06:40:58.9707133Z ##[group]Runner Image
+2026-10-10T06:40:58.9707966Z Image: ubuntu-24.04
+2026-10-10T06:40:58.9708642Z Version: 20261004.327.1
+2026-10-10T06:40:58.9710370Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-10T06:40:58.9712348Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+2026-10-10T06:40:58.9713851Z ##[endgroup]
+2026-10-10T06:40:58.9715212Z ##[group]GITHUB_TOKEN Permissions
+2026-10-10T06:40:58.9717387Z Contents: read
+2026-10-10T06:40:58.9718106Z Metadata: read
+2026-10-10T06:40:58.9718868Z ##[endgroup]
+2026-10-10T06:40:58.9721179Z Secret source: Actions
+2026-10-10T06:40:58.9722380Z Cache mode: write
+2026-10-10T06:40:58.9723290Z Prepare workflow directory
+2026-10-10T06:40:59.0183616Z Prepare all required actions
+2026-10-10T06:40:59.0221506Z Getting action download info
+2026-10-10T06:40:59.3000652Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-10-10T06:40:59.3897191Z Download action repository 'actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97' (SHA:5fda3b95a4ea91299a34e894583c3862153e4b97)
+2026-10-10T06:40:59.5491603Z Complete job name: verify
+2026-10-10T06:40:59.6038678Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-10-10T06:40:59.6039462Z with:
+2026-10-10T06:40:59.6039828Z   ref: 49d167b387981662450a1f8c475f28f4c9d9fe5a
+2026-10-10T06:40:59.6040312Z   persist-credentials: false
+2026-10-10T06:40:59.6040735Z   repository: build-the-future-11/RIS
+2026-10-10T06:40:59.6043761Z   token: ***
+2026-10-10T06:40:59.6044112Z   ssh-strict: true
+2026-10-10T06:40:59.6044458Z   ssh-user: git
+2026-10-10T06:40:59.6044787Z   clean: true
+2026-10-10T06:40:59.6045141Z   sparse-checkout-cone-mode: true
+2026-10-10T06:40:59.6045550Z   fetch-depth: 1
+2026-10-10T06:40:59.6045888Z   fetch-tags: false
+2026-10-10T06:40:59.6046241Z   show-progress: true
+2026-10-10T06:40:59.6046597Z   lfs: false
+2026-10-10T06:40:59.6046917Z   submodules: false
+2026-10-10T06:40:59.6047260Z   set-safe-directory: true
+2026-10-10T06:40:59.6047651Z   allow-unsafe-pr-checkout: false
+2026-10-10T06:40:59.6048203Z env:
+2026-10-10T06:40:59.6048611Z   SOURCE_SHA: 49d167b387981662450a1f8c475f28f4c9d9fe5a
+2026-10-10T06:40:59.6049094Z ##[endgroup]
+2026-10-10T06:40:59.6845009Z Syncing repository: build-the-future-11/RIS
+2026-10-10T06:40:59.6846700Z ##[group]Getting Git version info
+2026-10-10T06:40:59.6847465Z Working directory is '/home/runner/work/RIS/RIS'
+2026-10-10T06:40:59.6848647Z [command]/usr/bin/git version
+2026-10-10T06:40:59.6911088Z git version 2.55.0
+2026-10-10T06:40:59.6926827Z ##[endgroup]
+2026-10-10T06:40:59.6936472Z Temporarily overriding HOME='/home/runner/work/_temp/1aa983be-7527-49cd-8403-cb7186f1e929' before making global git config changes
+2026-10-10T06:40:59.6938373Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-10T06:40:59.6941899Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/RIS/RIS
+2026-10-10T06:40:59.6981108Z Deleting the contents of '/home/runner/work/RIS/RIS'
+2026-10-10T06:40:59.6984386Z ##[group]Determining repository object format
+2026-10-10T06:40:59.6985805Z ##[endgroup]
+2026-10-10T06:40:59.6987206Z ##[group]Initializing the repository
+2026-10-10T06:40:59.6989891Z [command]/usr/bin/git init /home/runner/work/RIS/RIS
+2026-10-10T06:40:59.7069043Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-10T06:40:59.7070491Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-10T06:40:59.7071792Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-10T06:40:59.7072903Z hint: call:
+2026-10-10T06:40:59.7073649Z hint:
+2026-10-10T06:40:59.7074361Z hint: 	git config --global init.defaultBranch <name>
+2026-10-10T06:40:59.7075171Z hint:
+2026-10-10T06:40:59.7075941Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-10T06:40:59.7077303Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-10T06:40:59.7078353Z hint:
+2026-10-10T06:40:59.7078938Z hint: 	git branch -m <name>
+2026-10-10T06:40:59.7079604Z hint:
+2026-10-10T06:40:59.7080477Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-10T06:40:59.7081694Z Initialized empty Git repository in /home/runner/work/RIS/RIS/.git/
+2026-10-10T06:40:59.7084081Z [command]/usr/bin/git remote add origin https://github.com/build-the-future-11/RIS
+2026-10-10T06:40:59.7122899Z ##[endgroup]
+2026-10-10T06:40:59.7124145Z ##[group]Disabling automatic garbage collection
+2026-10-10T06:40:59.7126048Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-10T06:40:59.7154799Z ##[endgroup]
+2026-10-10T06:40:59.7155633Z ##[group]Setting up auth
+2026-10-10T06:40:59.7156261Z Removing SSH command configuration
+2026-10-10T06:40:59.7159264Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-10T06:40:59.7189919Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-10T06:40:59.7477471Z Removing HTTP extra header
+2026-10-10T06:40:59.7483291Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-10T06:40:59.7516338Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-10T06:40:59.7706891Z Removing includeIf entries pointing to credentials config files
+2026-10-10T06:40:59.7711247Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-10T06:40:59.7747669Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-10T06:40:59.7937886Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-19d11dd8-5a59-4e0a-a2b9-b8a7b8b5f0cf.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-10T06:40:59.7971088Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/RIS/RIS/.git.path /home/runner/work/_temp/git-credentials-19d11dd8-5a59-4e0a-a2b9-b8a7b8b5f0cf.config
+2026-10-10T06:40:59.8001401Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/RIS/RIS/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-19d11dd8-5a59-4e0a-a2b9-b8a7b8b5f0cf.config
+2026-10-10T06:40:59.8034650Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-19d11dd8-5a59-4e0a-a2b9-b8a7b8b5f0cf.config
+2026-10-10T06:40:59.8064402Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-19d11dd8-5a59-4e0a-a2b9-b8a7b8b5f0cf.config
+2026-10-10T06:40:59.8090747Z ##[endgroup]
+2026-10-10T06:40:59.8091371Z ##[group]Fetching the repository
+2026-10-10T06:40:59.8095733Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin 49d167b387981662450a1f8c475f28f4c9d9fe5a
+2026-10-10T06:41:00.2223055Z From https://github.com/build-the-future-11/RIS
+2026-10-10T06:41:00.2223928Z  * branch            49d167b387981662450a1f8c475f28f4c9d9fe5a -> FETCH_HEAD
+2026-10-10T06:41:00.2231440Z [command]/usr/bin/git rev-parse --verify --quiet 49d167b387981662450a1f8c475f28f4c9d9fe5a^{object}
+2026-10-10T06:41:00.2255797Z 49d167b387981662450a1f8c475f28f4c9d9fe5a
+2026-10-10T06:41:00.2259830Z ##[endgroup]
+2026-10-10T06:41:00.2260675Z ##[group]Determining the checkout info
+2026-10-10T06:41:00.2261343Z ##[endgroup]
+2026-10-10T06:41:00.2263037Z [command]/usr/bin/git sparse-checkout disable
+2026-10-10T06:41:00.2307186Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-10T06:41:00.2336020Z ##[group]Checking out the ref
+2026-10-10T06:41:00.2339069Z [command]/usr/bin/git checkout --progress --force 49d167b387981662450a1f8c475f28f4c9d9fe5a
+2026-10-10T06:41:00.2390193Z Note: switching to '49d167b387981662450a1f8c475f28f4c9d9fe5a'.
+2026-10-10T06:41:00.2390887Z 
+2026-10-10T06:41:00.2391452Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-10T06:41:00.2392520Z changes and commit them, and you can discard any commits you make in this
+2026-10-10T06:41:00.2393594Z state without impacting any branches by switching back to a branch.
+2026-10-10T06:41:00.2394007Z 
+2026-10-10T06:41:00.2394292Z If you want to create a new branch to retain commits you create, you may
+2026-10-10T06:41:00.2394970Z do so (now or later) by using -c with the switch command. Example:
+2026-10-10T06:41:00.2395460Z 
+2026-10-10T06:41:00.2395728Z   git switch -c <new-branch-name>
+2026-10-10T06:41:00.2396144Z 
+2026-10-10T06:41:00.2396428Z Or undo this operation with:
+2026-10-10T06:41:00.2396848Z 
+2026-10-10T06:41:00.2397075Z   git switch -
+2026-10-10T06:41:00.2397400Z 
+2026-10-10T06:41:00.2397908Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-10T06:41:00.2398587Z 
+2026-10-10T06:41:00.2399417Z HEAD is now at 49d167b Retain exact published stencil CI outcomes in canonical state
+2026-10-10T06:41:00.2410734Z ##[endgroup]
+2026-10-10T06:41:00.2436977Z [command]/usr/bin/git log -1 --format=%H
+2026-10-10T06:41:00.2462195Z 49d167b387981662450a1f8c475f28f4c9d9fe5a
+2026-10-10T06:41:00.2472470Z ##[group]Removing auth
+2026-10-10T06:41:00.2473073Z Removing SSH command configuration
+2026-10-10T06:41:00.2478860Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-10T06:41:00.2500085Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-10T06:41:00.2700037Z Removing HTTP extra header
+2026-10-10T06:41:00.2707557Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-10T06:41:00.2737889Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-10T06:41:00.2921936Z Removing includeIf entries pointing to credentials config files
+2026-10-10T06:41:00.2925567Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-10T06:41:00.2952097Z includeif.gitdir:/home/runner/work/RIS/RIS/.git.path
+2026-10-10T06:41:00.2953144Z includeif.gitdir:/home/runner/work/RIS/RIS/.git/worktrees/*.path
+2026-10-10T06:41:00.2954235Z includeif.gitdir:/github/workspace/.git.path
+2026-10-10T06:41:00.2955033Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-10T06:41:00.2960140Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/RIS/RIS/.git.path
+2026-10-10T06:41:00.2982203Z /home/runner/work/_temp/git-credentials-19d11dd8-5a59-4e0a-a2b9-b8a7b8b5f0cf.config
+2026-10-10T06:41:00.2990486Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/RIS/RIS/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-19d11dd8\-5a59\-4e0a\-a2b9\-b8a7b8b5f0cf\.config
+2026-10-10T06:41:00.3023252Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/RIS/RIS/.git/worktrees/*.path
+2026-10-10T06:41:00.3045490Z /home/runner/work/_temp/git-credentials-19d11dd8-5a59-4e0a-a2b9-b8a7b8b5f0cf.config
+2026-10-10T06:41:00.3051627Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/RIS/RIS/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-19d11dd8\-5a59\-4e0a\-a2b9\-b8a7b8b5f0cf\.config
+2026-10-10T06:41:00.3086616Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-10-10T06:41:00.3108204Z /github/runner_temp/git-credentials-19d11dd8-5a59-4e0a-a2b9-b8a7b8b5f0cf.config
+2026-10-10T06:41:00.3113986Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-19d11dd8\-5a59\-4e0a\-a2b9\-b8a7b8b5f0cf\.config
+2026-10-10T06:41:00.3167622Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-10T06:41:00.3197043Z /github/runner_temp/git-credentials-19d11dd8-5a59-4e0a-a2b9-b8a7b8b5f0cf.config
+2026-10-10T06:41:00.3199795Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-19d11dd8\-5a59\-4e0a\-a2b9\-b8a7b8b5f0cf\.config
+2026-10-10T06:41:00.3230465Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-10T06:41:00.3415545Z Removing credentials config '/home/runner/work/_temp/git-credentials-19d11dd8-5a59-4e0a-a2b9-b8a7b8b5f0cf.config'
+2026-10-10T06:41:00.3422106Z ##[endgroup]
+2026-10-10T06:41:00.3695729Z ##[group]Run set -euo pipefail
+2026-10-10T06:41:00.3696236Z [36;1mset -euo pipefail[0m
+2026-10-10T06:41:00.3696709Z [36;1mtest "$(git rev-parse HEAD)" = "$SOURCE_SHA"[0m
+2026-10-10T06:41:00.3697227Z [36;1mtest -z "$(git status --porcelain)"[0m
+2026-10-10T06:41:00.3896132Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-10T06:41:00.3896678Z env:
+2026-10-10T06:41:00.3897060Z   SOURCE_SHA: 49d167b387981662450a1f8c475f28f4c9d9fe5a
+2026-10-10T06:41:00.3897535Z ##[endgroup]
+2026-10-10T06:41:00.4116058Z ##[group]Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+2026-10-10T06:41:00.4116659Z with:
+2026-10-10T06:41:00.4116991Z   python-version: 3.11
+2026-10-10T06:41:00.4117359Z   check-latest: false
+2026-10-10T06:41:00.4120151Z   token: ***
+2026-10-10T06:41:00.4120498Z   update-environment: true
+2026-10-10T06:41:00.4120899Z   allow-prereleases: false
+2026-10-10T06:41:00.4121277Z   freethreaded: false
+2026-10-10T06:41:00.4121627Z env:
+2026-10-10T06:41:00.4121987Z   SOURCE_SHA: 49d167b387981662450a1f8c475f28f4c9d9fe5a
+2026-10-10T06:41:00.4122444Z ##[endgroup]
+2026-10-10T06:41:00.5001591Z ##[group]Installed versions
+2026-10-10T06:41:00.5067144Z Successfully set up CPython (3.11.17)
+2026-10-10T06:41:00.5068228Z ##[endgroup]
+2026-10-10T06:41:00.5201667Z ##[group]Run python -m py_compile main.py
+2026-10-10T06:41:00.5202404Z [36;1mpython -m py_compile main.py[0m
+2026-10-10T06:41:00.5415038Z shell: /usr/bin/bash -e {0}
+2026-10-10T06:41:00.5415502Z env:
+2026-10-10T06:41:00.5415890Z   SOURCE_SHA: 49d167b387981662450a1f8c475f28f4c9d9fe5a
+2026-10-10T06:41:00.5416464Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-10T06:41:00.5417111Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+2026-10-10T06:41:00.5417741Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-10T06:41:00.5418303Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-10T06:41:00.5418869Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-10T06:41:00.5419440Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+2026-10-10T06:41:00.5419930Z ##[endgroup]
+2026-10-10T06:41:00.9891989Z ##[group]Run python -m pip install --disable-pip-version-check -r requirements.txt
+2026-10-10T06:41:00.9892843Z [36;1mpython -m pip install --disable-pip-version-check -r requirements.txt[0m
+2026-10-10T06:41:00.9949989Z shell: /usr/bin/bash -e {0}
+2026-10-10T06:41:00.9950393Z env:
+2026-10-10T06:41:00.9950779Z   SOURCE_SHA: 49d167b387981662450a1f8c475f28f4c9d9fe5a
+2026-10-10T06:41:00.9951272Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-10T06:41:00.9951810Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+2026-10-10T06:41:00.9952328Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-10T06:41:00.9952801Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-10T06:41:00.9953256Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-10T06:41:00.9953856Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+2026-10-10T06:41:00.9954264Z ##[endgroup]
+2026-10-10T06:41:03.0581798Z Collecting numpy<3,>=1.26 (from -r requirements.txt (line 1))
+2026-10-10T06:41:03.1163193Z   Downloading numpy-2.4.6-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+2026-10-10T06:41:03.1298336Z Downloading numpy-2.4.6-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.9 MB)
+2026-10-10T06:41:03.6565689Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.9/16.9 MB 33.9 MB/s  0:00:00
+2026-10-10T06:41:03.8224857Z Installing collected packages: numpy
+2026-10-10T06:41:05.3427848Z Successfully installed numpy-2.4.6
+2026-10-10T06:41:05.3864568Z ##[group]Run python -m unittest discover -s tests -v
+2026-10-10T06:41:05.3864917Z [36;1mpython -m unittest discover -s tests -v[0m
+2026-10-10T06:41:05.3922334Z shell: /usr/bin/bash -e {0}
+2026-10-10T06:41:05.3922557Z env:
+2026-10-10T06:41:05.3922773Z   SOURCE_SHA: 49d167b387981662450a1f8c475f28f4c9d9fe5a
+2026-10-10T06:41:05.3923087Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-10T06:41:05.3923569Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+2026-10-10T06:41:05.3923913Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-10T06:41:05.3924235Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-10T06:41:05.3924541Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-10T06:41:05.3924848Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+2026-10-10T06:41:05.3925141Z ##[endgroup]
+2026-10-10T06:41:05.6204723Z test_does_not_mutate_input (test_hessian.FiniteDifferenceHessianTests.test_does_not_mutate_input) ... ok
+2026-10-10T06:41:05.6264264Z test_matches_analytic_hessian_for_demo_objective (test_hessian.FiniteDifferenceHessianTests.test_matches_analytic_hessian_for_demo_objective) ... ok
+2026-10-10T06:41:05.6265701Z test_output_is_symmetric_for_smooth_scalar_objective (test_hessian.FiniteDifferenceHessianTests.test_output_is_symmetric_for_smooth_scalar_objective) ... ok
+2026-10-10T06:41:05.6267002Z test_constant_large_finite_offset_has_zero_hessian (test_hessian_contracts.HessianContractTests.test_constant_large_finite_offset_has_zero_hessian) ... ok
+2026-10-10T06:41:05.6268471Z test_cross_partials_are_symmetric_and_redundant_evaluations_are_avoided (test_hessian_contracts.HessianContractTests.test_cross_partials_are_symmetric_and_redundant_evaluations_are_avoided) ... ok
+2026-10-10T06:41:05.6270065Z test_integer_and_low_precision_inputs_match_mixed_analytic_hessian (test_hessian_contracts.HessianContractTests.test_integer_and_low_precision_inputs_match_mixed_analytic_hessian) ... ok
+2026-10-10T06:41:05.6271455Z test_invalid_coordinates_fail_before_objective (test_hessian_contracts.HessianContractTests.test_invalid_coordinates_fail_before_objective) ... ok
+2026-10-10T06:41:05.6272638Z test_invalid_steps_fail_before_objective (test_hessian_contracts.HessianContractTests.test_invalid_steps_fail_before_objective) ... ok
+2026-10-10T06:41:05.6273845Z test_nonfinite_curvature_is_rejected (test_hessian_contracts.HessianContractTests.test_nonfinite_curvature_is_rejected) ... ok
+2026-10-10T06:41:05.6275027Z test_nonscalar_complex_and_nonfinite_outputs_fail (test_hessian_contracts.HessianContractTests.test_nonscalar_complex_and_nonfinite_outputs_fail) ... ok
+2026-10-10T06:41:05.6276600Z test_objective_cannot_modify_callers_input (test_hessian_contracts.HessianContractTests.test_objective_cannot_modify_callers_input) ... ok
+2026-10-10T06:41:05.6277680Z test_python_sequence_is_supported (test_hessian_contracts.HessianContractTests.test_python_sequence_is_supported) ... ok
+2026-10-10T06:41:05.6278668Z test_single_coordinate_diagonal (test_hessian_contracts.HessianContractTests.test_single_coordinate_diagonal) ... ok
+2026-10-10T06:41:05.6279857Z test_unresolvable_coordinate_step_fails_before_objective (test_hessian_contracts.HessianContractTests.test_unresolvable_coordinate_step_fails_before_objective) ... ok
+2026-10-10T06:41:05.6281356Z test_actual_representable_steps_recover_shifted_quadratic (test_independent_represented_steps.IndependentStepReviewTests.test_actual_representable_steps_recover_shifted_quadratic) ... ok
+2026-10-10T06:41:05.6283036Z test_asymmetric_representable_steps_do_not_invent_linear_curvature (test_independent_represented_steps.IndependentStepReviewTests.test_asymmetric_representable_steps_do_not_invent_linear_curvature) ... ok
+2026-10-10T06:41:05.6284843Z test_mixed_curvature_uses_actual_steps_in_both_coordinates (test_independent_represented_steps.IndependentStepReviewTests.test_mixed_curvature_uses_actual_steps_in_both_coordinates) ... ok
+2026-10-10T06:41:05.6286632Z test_linear_objective_has_no_spurious_curvature_at_binade_boundary (test_represented_steps.RepresentedStepTests.test_linear_objective_has_no_spurious_curvature_at_binade_boundary) ... ok
+2026-10-10T06:41:05.6288078Z test_mixed_quadratic_uses_actual_coordinate_distances (test_represented_steps.RepresentedStepTests.test_mixed_quadratic_uses_actual_coordinate_distances) ... ok
+2026-10-10T06:41:05.6289486Z test_symmetric_rounded_steps_do_not_use_requested_denominator (test_represented_steps.RepresentedStepTests.test_symmetric_rounded_steps_do_not_use_requested_denominator) ... ok
+2026-10-10T06:41:05.6291040Z test_exact_affine_cancellation_survives_an_overflowing_difference (test_stencil_arithmetic.StencilArithmeticTests.test_exact_affine_cancellation_survives_an_overflowing_difference) ... ok
+2026-10-10T06:41:05.6292665Z test_large_diagonal_has_finite_curvature_despite_overflowing_difference (test_stencil_arithmetic.StencilArithmeticTests.test_large_diagonal_has_finite_curvature_despite_overflowing_difference) ... ok
+2026-10-10T06:41:05.6306242Z test_large_mixed_curvature_uses_the_captured_tensor_stencil (test_stencil_arithmetic.StencilArithmeticTests.test_large_mixed_curvature_uses_the_captured_tensor_stencil) ... ok
+2026-10-10T06:41:05.6307820Z test_nonuniform_large_diagonal_uses_both_represented_distances (test_stencil_arithmetic.StencilArithmeticTests.test_nonuniform_large_diagonal_uses_both_represented_distances) ... ok
+2026-10-10T06:41:05.6309455Z test_nonuniform_mixed_curvature_agrees_with_independent_lagrange_weights (test_stencil_arithmetic.StencilArithmeticTests.test_nonuniform_mixed_curvature_agrees_with_independent_lagrange_weights) ... ok
+2026-10-10T06:41:05.6311000Z test_objective_failure_at_first_corner_is_not_retried (test_stencil_arithmetic.StencilArithmeticTests.test_objective_failure_at_first_corner_is_not_retried) ... ok
+2026-10-10T06:41:05.6312498Z test_objective_keeps_callers_numpy_error_policy_and_policy_is_restored (test_stencil_arithmetic.StencilArithmeticTests.test_objective_keeps_callers_numpy_error_policy_and_policy_is_restored) ... ok
+2026-10-10T06:41:05.6314123Z test_ordinary_quadratic_retains_predecessor_bits (test_stencil_arithmetic.StencilArithmeticTests.test_ordinary_quadratic_retains_predecessor_bits) ... ok
+2026-10-10T06:41:05.6315558Z test_representable_subnormal_mixed_curvature_cannot_become_zero (test_stencil_arithmetic.StencilArithmeticTests.test_representable_subnormal_mixed_curvature_cannot_become_zero) ... ok
+2026-10-10T06:41:05.6317084Z test_subnormal_diagonal_rounds_once_from_the_exact_stencil (test_stencil_arithmetic.StencilArithmeticTests.test_subnormal_diagonal_rounds_once_from_the_exact_stencil) ... ok
+2026-10-10T06:41:05.6324707Z test_three_dimensions_preserve_order_budget_symmetry_and_input (test_stencil_arithmetic.StencilArithmeticTests.test_three_dimensions_preserve_order_budget_symmetry_and_input) ... ok
+2026-10-10T06:41:05.6354787Z test_truly_unrepresentable_curvature_is_rejected_without_re_evaluation (test_stencil_arithmetic.StencilArithmeticTests.test_truly_unrepresentable_curvature_is_rejected_without_re_evaluation) ... ok
+2026-10-10T06:41:05.6355588Z 
+2026-10-10T06:41:05.6355949Z ----------------------------------------------------------------------
+2026-10-10T06:41:05.6356421Z Ran 32 tests in 0.038s
+2026-10-10T06:41:05.6356607Z 
+2026-10-10T06:41:05.6356703Z OK
+2026-10-10T06:41:05.6487178Z ##[group]Run set -euo pipefail
+2026-10-10T06:41:05.6487432Z [36;1mset -euo pipefail[0m
+2026-10-10T06:41:05.6487660Z [36;1mpython main.py | tee /tmp/ris-smoke.txt[0m
+2026-10-10T06:41:05.6487919Z [36;1mtest -s /tmp/ris-smoke.txt[0m
+2026-10-10T06:41:05.6546169Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-10T06:41:05.6546466Z env:
+2026-10-10T06:41:05.6546676Z   SOURCE_SHA: 49d167b387981662450a1f8c475f28f4c9d9fe5a
+2026-10-10T06:41:05.6546978Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-10T06:41:05.6547308Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+2026-10-10T06:41:05.6547643Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-10T06:41:05.6547944Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-10T06:41:05.6548250Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-10T06:41:05.6548551Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+2026-10-10T06:41:05.6548853Z ##[endgroup]
+2026-10-10T06:41:05.7315099Z [[-0.84147098  0.        ]
+2026-10-10T06:41:05.7343864Z  [ 0.          0.41614684]]
+2026-10-10T06:41:05.7510827Z Post job cleanup.
+2026-10-10T06:41:05.8566316Z Post job cleanup.
+2026-10-10T06:41:05.9232735Z [command]/usr/bin/git version
+2026-10-10T06:41:05.9266422Z git version 2.55.0
+2026-10-10T06:41:05.9292668Z Temporarily overriding HOME='/home/runner/work/_temp/afb1443d-04f3-4460-a6fc-839ff25a76df' before making global git config changes
+2026-10-10T06:41:05.9293894Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-10T06:41:05.9296335Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/RIS/RIS
+2026-10-10T06:41:05.9322095Z Removing SSH command configuration
+2026-10-10T06:41:05.9327235Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-10T06:41:05.9356369Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-10T06:41:05.9560932Z Removing HTTP extra header
+2026-10-10T06:41:05.9567625Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-10T06:41:05.9610035Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-10T06:41:05.9808157Z Removing includeIf entries pointing to credentials config files
+2026-10-10T06:41:05.9813845Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-10T06:41:05.9845669Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-10T06:41:06.0229202Z Cleaning up orphan processes

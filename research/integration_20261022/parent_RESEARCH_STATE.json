@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "project": "RIS",
+  "updated_utc": "2026-10-10",
+  "current_phase": "ENGINEERING_DEVELOPMENT_REVIEW",
+  "scientific_disposition": "NUMERICAL_PROTOTYPE; no completed scientific study asserted",
+  "scientific_scope_authority": [
+    "README.md"
+  ],
+  "engineering_question": "Recover finite curvature when intermediate stencil arithmetic exceeds float64 range",
+  "current_change": "Preserve ordinary nonuniform diagonal/mixed arithmetic; use a fixed exact-rational fallback over captured float64 samples on range failure. Preserve represented steps, input admission, objective order/count and exact symmetry; reject genuinely unrepresentable curvature. Prior represented-distance repairs and all 20 earlier tests remain intact.",
+  "required_session_reads": [
+    "README.md",
+    "research/ENGINEERING_NUMERICAL_INTEGRITY_20261010.json",
+    "research/INDEPENDENT_NUMERICAL_REVIEW_20261010.json",
+    "research/STENCIL_ARITHMETIC_CONTRACT_20261010.md",
+    "research/STENCIL_ARITHMETIC_VERIFICATION_20261010.json"
+  ],
+  "protected_boundary": "Analytic numerical regressions establish stencil correctness only; absolute-step choice and cancellation limits remain.",
+  "protected_evaluation_opened": false,
+  "scientific_runs_this_revision": 0,
+  "research_complete": false,
+  "execution_budget": {
+    "scope": "bounded constructed regressions and existing correctness tests only",
+    "paid_compute": false,
+    "training_campaigns": 0,
+    "protected_runs": 0
+  },
+  "pending_gates": [
+    "The published implementation passed independent review and exact-head hosted CI. Integration remains pending in draft #5 stacked on unchanged #4; scientific gates remain separate.",
+    "Scientific hypothesis/specification/methodology/freeze/evidence/release gates remain governed by the retained study contracts."
+  ],
+  "history": [
+    {
+      "date": "2026-10-10",
+      "kind": "engineering_revision",
+      "record": "research/ENGINEERING_NUMERICAL_INTEGRITY_20261010.json",
+      "status": "implemented; 17 bounded tests passed; integration pending",
+      "scientific_outcomes_created": false
+    },
+    {
+      "date": "2026-10-10",
+      "kind": "independent_engineering_review",
+      "record": "research/INDEPENDENT_NUMERICAL_REVIEW_20261010.json",
+      "status": "20 bounded methods passed on the concurrently repaired source; no source edit by this review follow-up; integration pending",
+      "scientific_outcomes_created": false
+    },
+    {
+      "date": "2026-10-10",
+      "kind": "prospective_stencil_arithmetic_revision",
+      "contract": "research/STENCIL_ARITHMETIC_CONTRACT_20261010.md",
+      "baseline_record": "research/STENCIL_ARITHMETIC_BASELINE_20261010.json",
+      "record": "research/STENCIL_ARITHMETIC_VERIFICATION_20261010.json",
+      "status": "32 methods passed locally, independently and on the exact published code head; six independent probes and all 11 captured stencils passed; draft integration pending",
+      "scientific_outcomes_created": false,
+      "independent_review": "APPROVED_WITHIN_PROSPECTIVE_CONTRACT",
+      "publication": {
+        "draft_pr": 5,
+        "url": "https://github.com/build-the-future-11/RIS/pull/5",
+        "base_commit": "cae6c530f218b0802ab269f99c5272d71f511048",
+        "prospective_commit": "dd57481b2c053860a4f2b091254f6ac3582830b3",
+        "implementation_commit": "82c9a66cda569db9e2fe7bce9669c9d65b40d0c4",
+        "implementation_tree": "78e37b912937f25dc5dc364ea8a607b272ddd5a1",
+        "changed_blobs_and_modes_verified": 9,
+        "untouched_blobs_and_modes_verified": 9
+      },
+      "hosted_verification": {
+        "run_id": 38031661091,
+        "job_id": 114153706290,
+        "head_commit": "82c9a66cda569db9e2fe7bce9669c9d65b40d0c4",
+        "url": "https://github.com/build-the-future-11/RIS/actions/runs/38031661091",
+        "conclusion": "success",
+        "python": "3.11.17",
+        "numpy": "2.4.6",
+        "passed_methods": 32,
+        "seconds": 0.052,
+        "failed_methods": 0,
+        "skipped_methods": 0,
+        "exact_head_assertion": "passed",
+        "compilation": "passed",
+        "dependency_install": "passed",
+        "existing_demo": "passed",
+        "count_boundary": "Hosted repetition of the same 32 methods; no additional distinct coverage or scientific qualification."
+      }
+    }
+  ],
+  "history_index_scope": "Index to retained project records and this revision; not a reconstruction or replacement of the complete git/artifact history."
+}

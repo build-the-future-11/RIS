@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "project": "RIS",
-  "updated_utc": "2026-10-10",
-  "current_phase": "ENGINEERING_DEVELOPMENT_REVIEW",
+  "updated_utc": "2026-10-22T11:58:00.826285+00:00",
+  "current_phase": "ENGINEERING_INTEGRATION_REVIEWED_AWAITING_FINAL_HEAD_CI",
   "scientific_disposition": "NUMERICAL_PROTOTYPE; no completed scientific study asserted",
   "scientific_scope_authority": [
     "README.md"
@@ -27,8 +27,8 @@
     "protected_runs": 0
   },
   "pending_gates": [
-    "The published implementation passed independent review and exact-head hosted CI. Integration remains pending in draft #5 stacked on unchanged #4; scientific gates remain separate.",
-    "Scientific hypothesis/specification/methodology/freeze/evidence/release gates remain governed by the retained study contracts."
+    "Publish the canonical integration checkpoint and require fresh unchanged Python smoke on its exact head; then merge complete descendant PR5 to main and mark PR4 integrated with ancestry evidence.",
+    "A future scientific study still requires its own hypothesis, specification, methodology, freeze, evidence and release gates. The current numerical prototype is not research-complete."
   ],
   "history": [
     {
@@ -82,7 +82,55 @@
         "existing_demo": "passed",
         "count_boundary": "Hosted repetition of the same 32 methods; no additional distinct coverage or scientific qualification."
       }
+    },
+    {
+      "date": "2026-10-22",
+      "kind": "complete_descendant_integration_review",
+      "reviewed_commit": "49d167b387981662450a1f8c475f28f4c9d9fe5a",
+      "reviewed_tree": "784240a52f4a48103fc70f75d048c211d616bfa6",
+      "included_prs": [
+        4,
+        5
+      ],
+      "record": "research/GITHUB_INTEGRATION_REVIEW_20261022.md",
+      "status": "Source, existing tests, contract, full ancestry and exact-head CI reviewed. No concrete blocker in the stated engineering scope; final metadata/documentation head CI and integration pending.",
+      "runtime_source_changed_this_review": false,
+      "tests_executed_this_review": 0,
+      "scientific_outcomes_created": false
     }
   ],
-  "history_index_scope": "Index to retained project records and this revision; not a reconstruction or replacement of the complete git/artifact history."
+  "history_index_scope": "Index to retained project records and this revision; not a reconstruction or replacement of the complete git/artifact history.",
+  "previous_checkpoints": [
+    {
+      "parent_commit": "49d167b387981662450a1f8c475f28f4c9d9fe5a",
+      "canonical_state": "research/integration_20261022/parent_RESEARCH_STATE.json",
+      "pending_gates": [
+        "The published implementation passed independent review and exact-head hosted CI. Integration remains pending in draft #5 stacked on unchanged #4; scientific gates remain separate.",
+        "Scientific hypothesis/specification/methodology/freeze/evidence/release gates remain governed by the retained study contracts."
+      ],
+      "current_phase": "ENGINEERING_DEVELOPMENT_REVIEW",
+      "current_change": "Preserve ordinary nonuniform diagonal/mixed arithmetic; use a fixed exact-rational fallback over captured float64 samples on range failure. Preserve represented steps, input admission, objective order/count and exact symmetry; reject genuinely unrepresentable curvature. Prior represented-distance repairs and all 20 earlier tests remain intact."
+    }
+  ],
+  "integration_checkpoint": {
+    "mode": "engineering_only",
+    "reviewed_head": "49d167b387981662450a1f8c475f28f4c9d9fe5a",
+    "parent_pr4": "cae6c530f218b0802ab269f99c5272d71f511048",
+    "main_at_review": "ddfcb5e532d00362cdd5cf472799a01cb9464a72",
+    "ancestry": "PR4 and main are both ancestors of PR5; ahead3/behind0 and ahead6/behind0 respectively.",
+    "evidence": "research/integration_20261022/parent_ancestry_and_ci_receipt.json",
+    "historical_exact_head_ci": {
+      "run_id": 38031777245,
+      "job_id": 114154052480,
+      "head": "49d167b387981662450a1f8c475f28f4c9d9fe5a",
+      "status": "success",
+      "methods": 32,
+      "seconds": 0.038,
+      "scope": "Read back exact immutable source/run/job/log; not rerun locally in this review."
+    },
+    "current_change": "Canonical checkpoint, append-only review/evidence receipts, and one README correction: requirements.txt declares only NumPy. No runtime, test, dependency or workflow changes.",
+    "final_head_hosted_gate": "REQUIRED_PENDING",
+    "scientific_disposition_changed": false,
+    "prior_development_budgets": "Remain closed; no new numerical fixtures, objective measurements or scientific executions in this review."
+  }
 }

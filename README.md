@@ -11,7 +11,7 @@ The repository has one Python entry point, `main.py`, which:
 - evaluates the Hessian at a fixed example point;
 - prints the resulting matrix.
 
-The current code uses NumPy. A broader dependency list is retained in `requirements.txt`, but those packages are **not evidence that the corresponding framework features have been implemented**.
+The current runtime dependency declared in `requirements.txt` is NumPy (`numpy>=1.26,<3`). The implemented behavior is the numerical prototype described above.
 
 ## Run the current prototype
 

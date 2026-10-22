@@ -1,0 +1,349 @@
+{
+  "repository": "build-the-future-11/RIS",
+  "reviewed_head": "49d167b387981662450a1f8c475f28f4c9d9fe5a",
+  "reviewed_tree": "784240a52f4a48103fc70f75d048c211d616bfa6",
+  "ancestry": {
+    "pr4_to_pr5": {
+      "repository_full_name": "build-the-future-11/RIS",
+      "base": "cae6c530f218b0802ab269f99c5272d71f511048",
+      "head": "49d167b387981662450a1f8c475f28f4c9d9fe5a",
+      "status": "ahead",
+      "ahead_by": 3,
+      "behind_by": 0,
+      "total_commits": 3,
+      "too_large": null,
+      "base_commit": {
+        "sha": "cae6c530f218b0802ab269f99c5272d71f511048",
+        "url": "https://api.github.com/repos/build-the-future-11/RIS/commits/cae6c530f218b0802ab269f99c5272d71f511048",
+        "html_url": "https://github.com/build-the-future-11/RIS/commit/cae6c530f218b0802ab269f99c5272d71f511048"
+      },
+      "merge_base_commit": {
+        "sha": "cae6c530f218b0802ab269f99c5272d71f511048",
+        "url": "https://api.github.com/repos/build-the-future-11/RIS/commits/cae6c530f218b0802ab269f99c5272d71f511048",
+        "html_url": "https://github.com/build-the-future-11/RIS/commit/cae6c530f218b0802ab269f99c5272d71f511048"
+      },
+      "files": [
+        {
+          "filename": "README.md",
+          "status": "modified",
+          "additions": 26,
+          "deletions": 0,
+          "changes": 26,
+          "previous_filename": null
+        },
+        {
+          "filename": "RESEARCH_STATE.json",
+          "status": "modified",
+          "additions": 44,
+          "deletions": 4,
+          "changes": 48,
+          "previous_filename": null
+        },
+        {
+          "filename": "main.py",
+          "status": "modified",
+          "additions": 63,
+          "deletions": 18,
+          "changes": 81,
+          "previous_filename": null
+        },
+        {
+          "filename": "research/STENCIL_ARITHMETIC_BASELINE_20261010.json",
+          "status": "added",
+          "additions": 981,
+          "deletions": 0,
+          "changes": 981,
+          "previous_filename": null
+        },
+        {
+          "filename": "research/STENCIL_ARITHMETIC_CONTRACT_20261010.md",
+          "status": "added",
+          "additions": 103,
+          "deletions": 0,
+          "changes": 103,
+          "previous_filename": null
+        },
+        {
+          "filename": "research/STENCIL_ARITHMETIC_REPLAY_20261010.json",
+          "status": "added",
+          "additions": 253,
+          "deletions": 0,
+          "changes": 253,
+          "previous_filename": null
+        },
+        {
+          "filename": "research/STENCIL_ARITHMETIC_VERIFICATION_20261010.json",
+          "status": "added",
+          "additions": 226,
+          "deletions": 0,
+          "changes": 226,
+          "previous_filename": null
+        },
+        {
+          "filename": "research/replay_stencil_arithmetic.py",
+          "status": "added",
+          "additions": 79,
+          "deletions": 0,
+          "changes": 79,
+          "previous_filename": null
+        },
+        {
+          "filename": "tests/test_stencil_arithmetic.py",
+          "status": "added",
+          "additions": 218,
+          "deletions": 0,
+          "changes": 218,
+          "previous_filename": null
+        }
+      ]
+    },
+    "main_to_pr5": {
+      "repository_full_name": "build-the-future-11/RIS",
+      "base": "ddfcb5e532d00362cdd5cf472799a01cb9464a72",
+      "head": "49d167b387981662450a1f8c475f28f4c9d9fe5a",
+      "status": "ahead",
+      "ahead_by": 6,
+      "behind_by": 0,
+      "total_commits": 6,
+      "too_large": null,
+      "base_commit": {
+        "sha": "ddfcb5e532d00362cdd5cf472799a01cb9464a72",
+        "url": "https://api.github.com/repos/build-the-future-11/RIS/commits/ddfcb5e532d00362cdd5cf472799a01cb9464a72",
+        "html_url": "https://github.com/build-the-future-11/RIS/commit/ddfcb5e532d00362cdd5cf472799a01cb9464a72"
+      },
+      "merge_base_commit": {
+        "sha": "ddfcb5e532d00362cdd5cf472799a01cb9464a72",
+        "url": "https://api.github.com/repos/build-the-future-11/RIS/commits/ddfcb5e532d00362cdd5cf472799a01cb9464a72",
+        "html_url": "https://github.com/build-the-future-11/RIS/commit/ddfcb5e532d00362cdd5cf472799a01cb9464a72"
+      },
+      "files": [
+        {
+          "filename": "AGENTS.md",
+          "status": "added",
+          "additions": 5,
+          "deletions": 0,
+          "changes": 5,
+          "previous_filename": null
+        },
+        {
+          "filename": "README.md",
+          "status": "modified",
+          "additions": 57,
+          "deletions": 0,
+          "changes": 57,
+          "previous_filename": null
+        },
+        {
+          "filename": "RESEARCH_STATE.json",
+          "status": "added",
+          "additions": 88,
+          "deletions": 0,
+          "changes": 88,
+          "previous_filename": null
+        },
+        {
+          "filename": "main.py",
+          "status": "modified",
+          "additions": 129,
+          "deletions": 24,
+          "changes": 153,
+          "previous_filename": null
+        },
+        {
+          "filename": "research/ENGINEERING_NUMERICAL_INTEGRITY_20261010.json",
+          "status": "added",
+          "additions": 42,
+          "deletions": 0,
+          "changes": 42,
+          "previous_filename": null
+        },
+        {
+          "filename": "research/INDEPENDENT_NUMERICAL_REVIEW_20261010.json",
+          "status": "added",
+          "additions": 60,
+          "deletions": 0,
+          "changes": 60,
+          "previous_filename": null
+        },
+        {
+          "filename": "research/STENCIL_ARITHMETIC_BASELINE_20261010.json",
+          "status": "added",
+          "additions": 981,
+          "deletions": 0,
+          "changes": 981,
+          "previous_filename": null
+        },
+        {
+          "filename": "research/STENCIL_ARITHMETIC_CONTRACT_20261010.md",
+          "status": "added",
+          "additions": 103,
+          "deletions": 0,
+          "changes": 103,
+          "previous_filename": null
+        },
+        {
+          "filename": "research/STENCIL_ARITHMETIC_REPLAY_20261010.json",
+          "status": "added",
+          "additions": 253,
+          "deletions": 0,
+          "changes": 253,
+          "previous_filename": null
+        },
+        {
+          "filename": "research/STENCIL_ARITHMETIC_VERIFICATION_20261010.json",
+          "status": "added",
+          "additions": 226,
+          "deletions": 0,
+          "changes": 226,
+          "previous_filename": null
+        },
+        {
+          "filename": "research/replay_stencil_arithmetic.py",
+          "status": "added",
+          "additions": 79,
+          "deletions": 0,
+          "changes": 79,
+          "previous_filename": null
+        },
+        {
+          "filename": "tests/test_hessian_contracts.py",
+          "status": "added",
+          "additions": 92,
+          "deletions": 0,
+          "changes": 92,
+          "previous_filename": null
+        },
+        {
+          "filename": "tests/test_independent_represented_steps.py",
+          "status": "added",
+          "additions": 34,
+          "deletions": 0,
+          "changes": 34,
+          "previous_filename": null
+        },
+        {
+          "filename": "tests/test_represented_steps.py",
+          "status": "added",
+          "additions": 36,
+          "deletions": 0,
+          "changes": 36,
+          "previous_filename": null
+        },
+        {
+          "filename": "tests/test_stencil_arithmetic.py",
+          "status": "added",
+          "additions": 218,
+          "deletions": 0,
+          "changes": 218,
+          "previous_filename": null
+        }
+      ]
+    }
+  },
+  "reviews": {
+    "pr4": {
+      "reviews": []
+    },
+    "pr5": {
+      "reviews": []
+    },
+    "threads4": {
+      "review_threads": []
+    },
+    "threads5": {
+      "review_threads": []
+    }
+  },
+  "hosted_verification": {
+    "head": "49d167b387981662450a1f8c475f28f4c9d9fe5a",
+    "run_id": 38031777245,
+    "event": "pull_request",
+    "conclusion": "success",
+    "url": "https://github.com/build-the-future-11/RIS/actions/runs/38031777245",
+    "jobs": {
+      "jobs": [
+        {
+          "id": 114154052480,
+          "name": "verify",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 38031777245,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Checkout exact source",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Verify exact source",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Set up Python",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Compile current entry point",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Install current runtime dependencies",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Run numerical regression tests",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Execute current entry point",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "Post Set up Python",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 15
+            },
+            {
+              "name": "Post Checkout exact source",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 16
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 17
+            }
+          ]
+        }
+      ]
+    },
+    "methods_passed": 32,
+    "seconds": 0.038,
+    "distinct_coverage_counted": 32,
+    "current_review_did_not_execute_tests": true
+  },
+  "integration_requirement": "Fresh unchanged Python smoke workflow must pass on the metadata/documentation checkpoint before main integration."
+}
